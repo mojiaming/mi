@@ -1,0 +1,51 @@
+<!-- Generated template for the IonGoodsSlideComponent component -->
+<ion-slides  autoplay="1" loop="true" speed="1000"   autoplay="8000"  *ngIf="hosGoods1.length > 0">
+  <ion-slide>
+      <ion-row>
+          <ion-col col-4 *ngFor="let item of hosGoods1" tappable (click)="onGoods(item)">
+            <img [src]="item.pict_url"/>
+            <p class="coupon" *ngIf="item.coupon_start_fee">优惠卷{{item.coupon_start_fee}}</p>  
+            <p class="titel name">{{item.title}}</p>
+            <p class="jia2">￥{{item.amount}}</p>
+            <p class="jia1"> 已疯抢{{item.volume}}</p>
+          </ion-col>
+        </ion-row>
+  </ion-slide>
+
+  <ion-slide>
+      <ion-row>
+          <ion-col col-4 *ngFor="let item of hosGoods2" tappable (click)="onGoods(item)">
+            <img [src]="item.pict_url"/>
+            <p class="coupon" *ngIf="item.coupon_start_fee">优惠卷{{item.coupon_start_fee}}</p>  
+            <p class="titel name">{{item.title}}</p>
+            <p class="jia2">￥{{item.amount}}</p>
+            <p class="jia1"> 已疯抢{{item.volume}}</p>
+          </ion-col>
+        </ion-row>
+  </ion-slide>
+
+  <ion-slide>
+      <ion-row>
+          <ion-col col-4 *ngFor="let item of hosGoods3" tappable (click)="onGoods(item)">
+            <img [src]="item.pict_url"/>
+            <p class="coupon" *ngIf="item.coupon_start_fee">优惠卷{{item.coupon_start_fee}}</p>  
+            <p class="titel name">{{item.title}}</p>
+            <p class="jia2">￥{{item.amount}}</p>
+            <p class="jia1"> 已疯抢{{item.volume}}</p>
+          </ion-col>
+        </ion-row>
+  </ion-slide>
+
+  <ion-slide>
+      <ion-row>
+          <ion-col col-4 *ngFor="let item of hosGoods4" tappable (click)="onGoods(item)">
+            <img [src]="item.pict_url"/>
+            <p class="coupon" *ngIf="item.coupon_start_fee">优惠卷{{item.coupon_start_fee}}</p>  
+            <p class="titel name">{{item.title}}</p>
+            <p class="jia2">￥{{item.amount}}</p>
+            <p class="jia1"> 已疯抢{{item.volume}}</p>
+          </ion-col>
+        </ion-row>
+  </ion-slide>
+</ion-slides>
+

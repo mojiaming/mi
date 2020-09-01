@@ -1,0 +1,44 @@
+<ion-header no-border>
+    <ion-navbar >
+        <ion-title>个人中心</ion-title>
+        <ion-buttons end>
+            <button ion-button   (click)="onSet()" >
+                <ion-icon name="settings" color="white"></ion-icon>
+            </button>
+          </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <div class="userbox">
+        <div class="userbg">
+        </div>
+        <div class="pay">
+            <h5>剩余金额</h5>
+            <strong>{{userInfo?.userInfo.balance}}</strong>
+            <p>累计返现 &nbsp;&nbsp;{{userInfo?.userInfo.cash_back}}</p>
+        </div>
+        <div class="withdraw">
+            <h5>级别</h5>
+            <strong>{{userInfo?.type == 2 ? '代理':'会员'}}</strong>
+            <p>累计提成&nbsp;&nbsp; {{userInfo?.userInfo.commission}}</p>
+        </div>
+        <div>
+            <img class="item-avatar-left" [src]="userInfo.headimgurl" *ngIf="userInfo && userInfo.headimgurl" />
+        </div>
+        <span class="user-name">{{userInfo?.nickname}}</span>
+    </div>
+    <ion-item-group *ngFor="let page of pages" class="graups">
+        <ion-label class="page-name">{{page.name}}</ion-label>
+        <ul class="page_menu">
+            <li tappable *ngFor="let item of page.child" (click)="openPage(item)">
+                <div class="grid_box">
+                    <!-- <ion-icon name="albums"></ion-icon> -->
+                    <img [src]="item.icon"/>
+                    <p text-center>{{item.childName}}</p>
+                </div>
+            </li>
+        </ul>
+    </ion-item-group>
+</ion-content>

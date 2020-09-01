@@ -1,0 +1,381 @@
+page-home {
+
+    // .searchbar-ios .searchbar-input {
+    //     border-radius: 999px !important;
+    //     background-color: color($colors,link) !important;
+    // }
+
+    .scroll-content{
+        margin-bottom: 60px !important;
+    }
+    .home{
+
+        
+        .dixian{
+            // margin: -8px 0 0 0;
+            background-color: color($colors,link);
+            padding: 10px;
+        }
+    
+        .i{
+            img{
+                width: 35px;
+                border-radius: 999px;
+                height: 35px;
+            }
+            p{
+                margin: 0;
+                font-size: 1.2rem;
+            }
+ 
+            // border-top: 10px solid color($colors,link);
+            div{
+                position: relative;
+                width: 40px;
+                height: 40px;
+                background-image: url(../assets/imgs/category.png);
+                background-size: cover;
+                display: block!important;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    
+        .bom{
+            border-bottom: 10px solid color($colors,link);
+        }
+        .titel{
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        .jia2{
+            font-size: 1.4rem;
+            color:color($colors,primary);
+            font-weight: 900;
+        }
+    
+        .toolbar-background-ios{
+            background:color($colors,primary);     
+        }
+    
+        #slides1 {
+            height: 14rem;
+            // margin-top: -1px;
+            img{
+                height: 14rem;
+                width: 100%;
+            }
+        }
+        .tejia{
+            height: 2rem;
+        }
+
+
+
+        // 栏目
+        .row-body{
+            // border-bottom: 10px solid #f2f2f2;
+            border-top: 10px solid #f2f2f2;
+            .grab{
+                height: 26px;
+                text-align: start;
+                margin-bottom: 5px;
+                .title{
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                }
+                .time {
+                    color: #fff;
+                    background: color($colors,danger);
+                    padding: 2px 5px 2px 5px;
+                    border-radius: 8rem;
+                    font-size: 1rem;  
+                }
+                .down_time {
+                    color: color($colors,danger);
+                    font-size: 1rem;  
+                    font-style: normal;
+                    // margin-left: 10px;
+                }
+            }
+            .col-img{
+                text-align: center;
+                padding: 0;
+                .right-img{
+                    max-height: 10rem;
+                 }
+            }
+            .jia1{
+                color: #666;
+                font-size: 1.2rem;
+            }
+            ion-slides{
+                height: auto;
+              
+                .reserve-price{
+                    font-size: 1.4rem;
+                    color: color($colors,gray)
+                }
+                p{
+                    height: 24px;
+                }
+            }
+    
+            .col-left{
+                border-right: 0.5px solid color($colors,link);
+            }
+    
+            .col-right{
+                border-left: 0.5px solid color($colors,link);
+                padding: 0;
+                .row-top{
+                    border-bottom: 0.5px solid color($colors,link);
+                }
+                .row-bottom{
+                    border-top: 0.5px solid color($colors,link);
+                }
+            }
+        }
+      
+
+       
+        ion-col{
+            p{
+                margin:0;
+                padding: 0;
+                text-align: center;
+            }
+        }
+    
+        p{
+            margin: -8px 0 0 0;
+            // background-color: color($colors,link);
+            padding: 8px;
+        }
+    
+        ion-list{
+            img{
+                width: 8rem !important;
+                height: 8rem !important;
+            }
+            .juan{
+                background: -moz-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                background: -webkit-gradient(linear,left top,left right,color-stop(0,#FF5E5E),color-stop(100%,#FF927C));
+                background: -webkit-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                background: -o-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                background: -ms-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                background: linear-gradient(to left,#FF5E5E 0,#FF927C 100%);
+                padding: 3px 10px;
+                color: color($colors,link);
+                text-align: center;
+                font-size: 1rem;
+                font-style: italic !important;
+                display: block;
+                min-width: 3rem;
+                float: right;
+                border-radius: 5px;
+            }
+            p{
+                margin: 0;
+                background-color: #fff;
+                padding: 0;
+            }
+            
+        }
+    }
+  
+    .amount{
+        font-size: 1.8rem !important;
+    }
+    .authorize{
+        margin-bottom: 10px;
+        width: 100%;
+        div{
+            height: 30px;
+            margin: 0 20px 0 20px;
+            background-color: color($colors,link);
+            border-radius: 999px;
+        }
+        img{
+            height: 20px;
+            margin: 5px;
+            border-radius: 99px;
+        }
+        .span1{
+            position:  absolute;
+            margin: 5px 0 0 10px;
+        }
+        .span2{
+            position: absolute;
+            right: 20px;
+            color: #fff;
+            background-color: #f53d3d;
+            border-radius: 999px;
+            width: 70px;
+            text-align: center;
+            font-size: 1rem;
+            height: 20px;
+            margin: 5px;
+            line-height: 21px;
+        }
+    }
+    
+    ion-segment {
+        overflow: auto;   
+        -webkit-box-pack: start;
+        -webkit-justify-content: start;
+        -ms-flex-pack: start;
+        justify-content: start;
+    }
+    .segment-md .segment-button{
+        min-width: 60px !important;
+        font-size: 1.5rem;
+    }
+
+    .segment-button {
+        overflow: initial; 
+        text-overflow: initial;
+    }
+
+    // ion-header{
+    //     height: 3rem;
+    //     ion-toolbar{
+    //         height: 3rem;
+    //     }
+    // }
+
+    ion-content{
+
+    // .toolbar-background-ios{
+    //     background:color($colors,primary);     
+    // }
+    .yuanjia{
+        text-decoration: line-through;
+    }
+    p{
+        margin: 5px;
+        padding:0;
+    }
+        ion-grid{
+            padding: 3px !important;
+            margin: 0 !important;
+            ion-row{
+                margin-top: 30px;
+                ion-col{
+                    border: 3px solid color($colors,link);
+                    background-color: color($colors,white);
+                    img{
+                        // width: 12rem;
+                        // height: 12rem;
+                        min-height: 12rem;
+                        min-width: 12rem;
+                    }
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    .border{
+                        border: none !important;
+                    }
+                    .yishou{
+                        color: #745656;
+                        font-size: 0.8rem;
+                    }
+                    .juan{
+                        background: -moz-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: -webkit-gradient(linear,left top,left right,color-stop(0,#FF5E5E),color-stop(100%,#FF927C));
+                        background: -webkit-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: -o-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: -ms-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: linear-gradient(to left,#FF5E5E 0,#FF927C 100%);
+                        padding: 3px 10px;
+                        color: color($colors,link);
+                        text-align: center;
+                        font-size: 1rem;
+                        font-style: italic !important;
+                        display: block;
+                        min-width: 3rem;
+                        float: right;
+                        border-radius: 5px;
+                        samp{
+                            font-size: 1.5rem;
+                            font-weight: 900;
+                        }
+                    }
+                    .red{
+                        color: color($colors,danger);
+                    }
+                    .info{
+                        position: absolute;
+                        right: 0;
+                        // top: 12rem;
+                        height: 20px;
+                        // margin: -25px 5px 0 0;
+                        background: -moz-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: -webkit-gradient(linear,left top,left right,color-stop(0,#FF5E5E),color-stop(100%,#FF927C));
+                        background: -webkit-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: -o-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: -ms-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: linear-gradient(to left,#FF5E5E 0,#FF927C 100%);
+                        padding: 3px 10px;
+                        color: color($colors,link);
+                        text-align: center;
+                        font-size: 1rem;
+                        font-style: italic !important;
+                        display: block;
+                        min-width: 3rem;
+                        float: right;
+                        border-radius: 99px 0 0 99px;
+                    }
+                }
+               
+            }
+           
+        }
+    }
+    .tabs{
+        .tab{
+            position: relative;
+            width: 100%;
+            z-index: 1;
+            height: 30px;
+            .fiter{
+                position: fixed;
+                width: 100%;
+                background: #fff;
+                height: 30px;
+            }
+            ion-icon {
+                font-size: 1.5em;
+            }
+            .col {
+                padding: 5px;
+                font-size: 1.2rem;
+            }
+        }
+        ion-grid{
+            ion-row {
+                margin-top: 0px;
+            }
+        }
+        
+        background-color: color($colors,link)!important;
+        .titel{
+            display: -webkit-box;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;//当属性值为3，表示超出3行隐藏
+            span{
+                color: color($colors,white);
+                font-size: 0.8rem;
+                padding: 2px;
+                margin: 0 2px 0 0;
+                background-color: color($colors,danger);
+            }
+        }
+     
+        
+    }
+    
+    
+}

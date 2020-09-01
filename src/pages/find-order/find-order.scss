@@ -1,0 +1,30 @@
+page-find-order {
+    .order{
+        background-color: color($colors,link);
+        border-radius: 10px;
+        ion-input, ion-textarea {
+            margin-left: 4rem;
+            height: 3.5rem;
+        }
+        img{
+            width: 2.5rem;
+            position: absolute;
+            margin: 0.5rem;
+        }
+    }
+
+    .button{
+        margin-top: 20px !important;
+    }
+
+    img{
+        width: 60%;
+        margin: 10% 20%;
+    }
+
+    .red{
+        color: color($colors,primary);
+        text-align: center;
+    }
+    
+}

@@ -1,0 +1,63 @@
+page-special-goods {
+
+    
+    ion-icon{
+        position: absolute;
+        padding: 10px;
+        font-size: 3.5rem;
+        color: color($colors,light)
+    }
+    .segment-md .segment-button{
+        font-size: 1.8rem;
+    }
+    .dixian{
+        margin: 0;
+        background-color: color($colors,link);
+        padding: 10px;
+    }
+    ion-list{
+        padding: 0!important;
+        margin: 0 !important;
+        .jia2{
+            font-size: 1.4rem;
+            color:color($colors,primary);
+            font-weight: 900;
+        }
+        img{
+            width: 8rem !important;
+            height: 8rem !important;
+        }
+        .juan{
+            background: -moz-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+            background: -webkit-gradient(linear,left top,left right,color-stop(0,#FF5E5E),color-stop(100%,#FF927C));
+            background: -webkit-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+            background: -o-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+            background: -ms-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+            background: linear-gradient(to left,#FF5E5E 0,#FF927C 100%);
+            padding: 3px 10px;
+            color: color($colors,link);
+            text-align: center;
+            font-size: 1rem;
+            font-style: italic !important;
+            display: block;
+            min-width: 3rem;
+            float: right;
+            border-radius: 5px;
+        }
+        p{
+            margin: 0;
+            background-color: #fff;
+            padding: 0;
+        }
+        .amount{
+            font-size: 1.8rem !important;
+        }
+        .titel{
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+           
+        }
+    }
+   
+}

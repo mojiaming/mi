@@ -1,0 +1,38 @@
+page-problem {
+    .ios{
+        padding: 0px;
+    }
+    ion-list {
+        ion-item {
+          padding: 0;
+          background-color: transparent;
+          padding-left: 0;
+          position: relative;
+        }
+        p{
+            font-weight: bold;
+            color: color($colors,danger) !important;
+        }
+        ion-label {
+          div {
+            text-transform: none;
+            font-size: 0.8em;
+            padding: 1em 0;
+            white-space: normal;
+            text-align: justify;
+          }
+        }
+        ion-icon  {
+          font-size: 1.8rem;
+          padding: 0;
+          text-align: center;
+          position: absolute;
+          right: 10px;
+          top: 3px;
+          &:before {
+            font-weight: bold;
+          }
+        }
+      }
+
+}

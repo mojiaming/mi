@@ -1,0 +1,17 @@
+<!--
+  Generated template for the OpenUrlPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content>
+  <ion-navbar *ngIf="title">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+  <ion-fab center middle left>
+    <button ion-fab (click)="onBack()">蜜淘平台</button>
+  </ion-fab>
+  <iframe id="iframe" [src]="secUrl" *ngIf="secUrl">
+  </iframe>
+</ion-content>

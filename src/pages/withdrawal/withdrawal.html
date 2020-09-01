@@ -1,0 +1,44 @@
+<!--
+  Generated template for the WithdrawalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar >
+    <ion-title>提现</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-go-home></ion-go-home>
+  <ion-list-header text-wrap>
+    提现到支付宝
+  </ion-list-header>
+  <ion-list>
+    <ion-item>
+      <ion-label color="dark" >余额</ion-label>
+      <ion-label color="dark">{{param.total_money}}元</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="dark" >支付宝账号</ion-label>
+      <ion-input placeholder="请输入真实有效的支付宝账号" [(ngModel)]="param.cash_account" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="dark" >金额</ion-label>
+      <ion-input placeholder="提现金额需要是5的倍数" [(ngModel)]="param.money" type="number"></ion-input>
+    </ion-item>
+    <button ion-button full round color="primary" (click)="onSubmit()" [disabled]="!param.cash_account"> 确定</button>
+
+    <ion-item class="tixian">
+      <h2>提现通知</h2>
+      <p>注意：最低提现10元</p>
+      <p text-wrap>提现金额需是5的倍数，即：10,15,20,25...，提现后，管理员会在3个工作日提现到您微信钱包。</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

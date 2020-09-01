@@ -1,0 +1,67 @@
+<!--
+  Generated template for the AgentApplyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar >
+    <ion-title>代理申请</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!-- 代理和会员区别是什么？ -->
+<ion-content>
+  <img src="assets/imgs/dailibg.png" />
+  <ion-list>
+    <ion-card>
+      <ion-card-header text-wrap>
+        成为代理是否需要缴费？
+      </ion-card-header>
+      <ion-card-content>
+        不需要，平台不会收取任何任何费用。
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header text-wrap>
+        我为什么要成为代理？代理有什么好处？
+      </ion-card-header>
+      <ion-card-content>
+        成为代理人可以通过推广获得更多的返利，不会有任何限制。而代理人将比会员获得更多的提成详细情况请咨询客服。
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card>
+      <ion-card-header text-wrap>
+        成为代理人有什么条件吗？
+      </ion-card-header>
+      <ion-card-content>
+        为了代理人能够更加具有积极和热情，需要申请人通过推广的团队总人数达到<span class="text-special">{{total}}</span>人（一级和二级总和）才可以进行该申请。
+      </ion-card-content>
+    </ion-card>
+
+    <progress-bar [total]="total" [amount]="amount"></progress-bar>
+    <p text-center *ngIf="amount < total ">距离目标还缺{{total - amount}}人</p>
+    <p text-center *ngIf="amount >=total ">恭喜你，已达到目标人数</p>
+    <ion-list-header>
+      请认真填写一下资料
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label color="dark">*微信号：</ion-label>
+      <ion-input placeholder="请输入微信号" [(ngModel)]="param.wechat"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="dark">*手机号：</ion-label>
+      <ion-input placeholder="请输入手机号" [(ngModel)]="param.phome"></ion-input>
+    </ion-item>
+    <button ion-button full round color="primary" [disabled]="disable || param.wechat == '' || param.phome == '' || isSubmit || amount < total "
+      (click)="onSubmit()"> 确定</button>
+  </ion-list>
+
+  <ion-go-home></ion-go-home>
+</ion-content>

@@ -1,0 +1,128 @@
+<!--
+  Generated template for the GoodsDetailedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+  <ion-navbar #header >
+    <ion-title>{{goods_detailed?.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content fullscreen (ionScroll)="scrollEvent($event)">
+
+  <ion-go-home></ion-go-home>
+  <!-- <img [src]="goods_detailed?.pict_url" *ngIf="goods_detailed && goods_detailed.pict_url" /> -->
+
+  <ion-slides id="slides1" autoplay="1" loop="true" speed="1000" pager="true" #slides autoplay="5000" *ngIf="goods_detailed && goods_detailed.small_images"
+    class="slides1">
+
+    <ion-slide *ngFor="let item of goods_detailed.small_images">
+      <img [src]="item" />
+    </ion-slide>
+
+  </ion-slides>
+
+  <p class="titel">{{goods_detailed?.title}}</p>
+  <ion-row class="text-row">
+    <ion-col clo-6><samp class="jia1">现价：<samp class="jia2">￥{{goods_detailed?.zk_final_price}}</samp></samp></ion-col>
+    <ion-col clo-6>原价：<samp class="yuanjia">￥{{goods_detailed?.reserve_price}}</samp></ion-col>
+  </ion-row>
+
+  <div class="juan" *ngIf="goods_detailed && goods_detailed.coupon_info">
+    <!-- <img src="assets/imgs/goods_quan.png" /> -->
+    <p text-center>优惠卷<samp class="jia2">{{goods_detailed?.coupon_info}}</samp></p>
+    <!-- <p text-center>使用门槛：{{goods?.coupon_start_fee}}</p> -->
+    <p text-center>使用期限：{{goods_detailed?.coupon_start_time}} - {{goods_detailed?.coupon_end_time }}</p>
+  </div>
+
+  <ion-row class="text-row">
+    <ion-col clo-6>销量：{{goods_detailed?.volume}}</ion-col>
+    <ion-col clo-6>剩余数量：{{goods_detailed?.coupon_remain_count}}</ion-col>
+  </ion-row>
+  <ion-row class="text-row">
+    <ion-col clo-6>店铺：</ion-col>
+    <ion-col clo-6>{{goods_detailed?.nick}}</ion-col>
+  </ion-row>
+  <p class="miaossu" *ngIf="goods_detailed && goods_detailed.item_description">推荐理由</p>
+  <p>{{goods_detailed?.item_description}}</p>
+
+  <div *ngIf="goods_detailed && goods_detailed.small_images">
+    <img [src]="item" *ngFor="let item of goods_detailed.small_images" />
+  </div>
+
+
+  <!-- <p text-center class="p-text">— 猜你喜欢 —</p> -->
+  <img src="assets/imgs/love.jpg"/>
+
+  <ion-slides autoplay="1" loop="true" speed="1000" autoplay="8000" *ngIf="hosGoods1.length > 0" class="slides2">
+    <ion-slide *ngIf="hosGoods1.length > 0">
+      <ion-row>
+        <ion-col col-4 *ngFor="let item of hosGoods1" tappable (click)="onLick(item)">
+          <img [src]="item.pict_url" />
+          <p class="coupon" *ngIf="item.coupon_info">{{item.coupon_info}}</p>  
+          <p class="titel name">{{item.title}}</p>
+          <p class="jia3"> ￥{{item.zk_final_price}}</p>
+          <p class="jia4" >已疯抢{{item.volume}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+    <ion-slide *ngIf="hosGoods2.length > 0">
+      <ion-row>
+        <ion-col col-4 *ngFor="let item of hosGoods2" tappable (click)="onLick(item)">
+          <img [src]="item.pict_url" />
+          <p class="coupon" *ngIf="item.coupon_info">{{item.coupon_info}}</p>  
+          <p class="titel name">{{item.title}}</p>
+          <p class="jia3"> ￥{{item.zk_final_price}}</p>
+          <p class="jia4" >已疯抢{{item.volume}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+    <ion-slide *ngIf="hosGoods3.length > 0">
+      <ion-row>
+        <ion-col col-4 *ngFor="let item of hosGoods3" tappable (click)="onLick(item)">
+          <img [src]="item.pict_url" />
+          <p class="coupon" *ngIf="item.coupon_info">{{item.coupon_info}}</p>  
+          <p class="titel name">{{item.title}}</p>
+          <p class="jia3"> ￥{{item.zk_final_price}}</p>
+          <p class="jia4">已疯抢{{item.volume}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+    <ion-slide *ngIf="hosGoods4.length > 0">
+      <ion-row>
+        <ion-col col-4 *ngFor="let item of hosGoods4" tappable (click)="onLick(item)">
+          <img [src]="item.pict_url" />
+          <p class="coupon" *ngIf="item.coupon_info">{{item.coupon_info}}</p>  
+          <p class="titel name">{{item.title}}</p>
+          <p class="jia3"> ￥{{item.zk_final_price}}</p>
+          <p class="jia4">已疯抢{{item.volume}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer no-border>
+  <!-- <ion-toolbar> -->
+  <ion-row>
+    <ion-col col-3>
+      <button ion-button color="link" (click)="onHome()">首页</button>
+    </ion-col>
+    <ion-col col-3>
+      <button ion-button color="light" (click)="onShare()">分享</button>
+    </ion-col>
+
+    <ion-col col-6>
+      <button ion-button color="primary" (click)="onBuy()" *ngIf="isWXBrowser"> 口令购买 </button>
+      <!-- <a ion-button color="primary" [href]="url" *ngIf="!isWXBrowser" target="_blank"> 淘宝购买 </a> -->
+      <button ion-button color="primary" *ngIf="!isWXBrowser" (click)="onTaobao()"> 淘宝购买 </button>
+    </ion-col>
+  </ion-row>
+  <!-- </ion-toolbar> -->
+</ion-footer>

@@ -1,0 +1,52 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content>
+
+  <!-- <ion-icon name="arrow-back" color="light" tappable navPop></ion-icon> -->
+  <div class="bg">
+    <img src="assets/imgs/search.png" />
+    <ion-searchbar placeholder="输入您想搜索的商品名称" (keyup.enter)="onSearch()" showCancelButton="true" cancelButtonText="搜索"
+      (ionCancel)="onSearch()" [(ngModel)]="text">
+    </ion-searchbar>
+    <ion-segment [(ngModel)]="segmentModel" mode="md">
+
+      <ion-segment-button value="1">
+        淘宝
+      </ion-segment-button>
+
+      <ion-segment-button value="2">
+        拼多多
+      </ion-segment-button>
+
+      <ion-segment-button value="3">
+        京东
+      </ion-segment-button>
+
+    </ion-segment>
+  </div>
+
+  <p text-center *ngIf="hots.length > 0"  class="p-text">— 热门标签 —</p>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of hots">
+        <button ion-button round color="light" (click)="onHos(item)">{{item}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <p text-center *ngIf="hosGoodsList.length > 0" class="p-text">— 热销推荐 —</p>
+
+
+  <ion-goods-slide [goodsList]="hosGoodsList"></ion-goods-slide>
+
+  <p text-center *ngIf="qualityList.length > 0"  class="p-text">— 优质推荐 —</p>
+
+  <ion-goods-slide [goodsList]="qualityList"></ion-goods-slide>
+
+</ion-content>

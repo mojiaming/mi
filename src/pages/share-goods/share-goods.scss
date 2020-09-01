@@ -1,0 +1,14 @@
+page-share-goods {
+    ion-content{
+        background-color: color($colors,link) !important;
+    }
+
+    .close{
+        font-size: 4rem;
+    }
+    p{
+        padding: 10px;
+        -webkit-user-select: auto !important;
+    }
+
+}

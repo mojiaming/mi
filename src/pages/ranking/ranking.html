@@ -1,0 +1,131 @@
+<!--
+  Generated template for the RankingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>排行榜</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="onRules()">
+                规则
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-go-home></ion-go-home>
+    <ion-segment [(ngModel)]="state" mode="md">
+        <ion-segment-button value="the">
+            当月
+        </ion-segment-button>
+        <ion-segment-button value="before">
+            上一月
+        </ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="state">
+        <ion-list *ngSwitchCase="'the'">
+
+            <div text-center class="no-order" *ngIf="theData.length == 0">
+                <img src="assets/imgs/noorder.png" />
+                <p>还未有用户达标喔，马上邀请新用户，把奖励抱回家吧！</p>
+            </div>
+
+            <ion-item *ngFor="let item of theData;let i = index">
+                <ion-row>
+                    <ion-col col-2>
+                        <div [ngSwitch]="i">
+                            <ion-avatar *ngSwitchCase="0">
+                                <img src="./assets/imgs/1.jpg">
+                            </ion-avatar>
+
+                            <ion-avatar *ngSwitchCase="1">
+                                <img src="./assets/imgs/2.jpg">
+                            </ion-avatar>
+
+                            <ion-avatar *ngSwitchCase="2">
+                                <img src="./assets/imgs/3.jpg">
+                            </ion-avatar>
+
+                            <div *ngIf="i > 2">
+                                <ion-badge>{{i+1}}</ion-badge>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col col-3>
+                        <ion-avatar>
+                            <img [src]="item.wxUser.headimgurl">
+                        </ion-avatar>
+                    </ion-col>
+
+                    <ion-col col-4 class="overflow">
+                        {{item.wxUser.nickname}}
+                    </ion-col>
+
+                    <ion-col col-3>
+                        {{item.amount}}
+                    </ion-col>
+                </ion-row>
+            </ion-item>
+
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'before'">
+
+            <div text-center class="no-order" *ngIf="beforeData.length == 0">
+                <img src="assets/imgs/noorder.png" />
+                <p>还未有用户达标</p>
+            </div>
+
+            <ion-item *ngFor="let item of beforeData;let i = index">
+                <ion-row>
+                    <ion-col col-2>
+                        <div [ngSwitch]="i">
+                            <ion-avatar *ngSwitchCase="0">
+                                <img src="./assets/imgs/1.jpg">
+                            </ion-avatar>
+
+                            <ion-avatar *ngSwitchCase="1">
+                                <img src="./assets/imgs/2.jpg">
+                            </ion-avatar>
+
+                            <ion-avatar *ngSwitchCase="2">
+                                <img src="./assets/imgs/3.jpg">
+                            </ion-avatar>
+
+                            <div *ngIf="i > 2">
+                                <ion-badge>{{i+1}}</ion-badge>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col col-3>
+                        <ion-avatar>
+                            <img [src]="item.wxUser.headimgurl">
+                        </ion-avatar>
+                    </ion-col>
+
+                    <ion-col col-4 class="overflow">
+                        {{item.wxUser.nickname}}
+                    </ion-col>
+
+                    <ion-col col-3>
+                        {{item.amount}}
+                    </ion-col>
+                </ion-row>
+
+                <ion-badge item-end *ngIf="item.state == 1 && i < 3">处理中</ion-badge>
+                <ion-badge item-end *ngIf="item.state == 2 && i < 3">已发放</ion-badge>
+                <ion-badge item-end *ngIf="item.state == 9 && i < 3">已失效</ion-badge>
+                <ion-badge item-end *ngIf="i > 2">未中奖</ion-badge>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

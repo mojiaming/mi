@@ -1,0 +1,128 @@
+page-contact {
+    ion-icon{
+        font-size: 3rem;
+        color:  color($colors, primary);
+    }
+ // header样式
+    .toolbar-background-ios{
+            background:color($colors,primary);     
+    }
+    .toolbar-title-ios{
+        color: white;
+    }
+    .exit{
+        float: right;
+        background: transparent;
+    }
+    .userbox {
+        width: 100%;
+        height: 18rem;
+        background: white;
+        position: relative;
+        z-index: -1;
+        text-align: center;
+        .userbg {
+            width: 153%;
+            height: 32rem;
+            border-radius: 0px 0px 32rem 28rem;
+            background: $personalheader-linear-gradient;
+            position: absolute;
+            top: -110%;
+            z-index: -1;
+            left: -23%;
+        }
+        .pay,
+        .withdraw {
+            z-index: 2;
+            width: 50%;
+            text-align: center;
+            color: white;
+            padding-top: 10px;
+            float: left;
+            p {
+                margin-top: 5px;
+            }
+        }
+        h5 {
+            font-size: 1.6rem;
+            padding-bottom: 10px;
+            margin: 0;
+        }
+        .item-avatar-left {
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            display: inline-block;
+            // background: url(../../assets/imgs/personal/user.jpg);
+            background-size: 100%;
+            overflow: hidden;
+            margin-top: -15px;
+        }
+        .user-name{
+            font-size: 1.6rem;
+            color: black;
+            margin-top: -15px;
+            vertical-align: text-bottom;
+        }
+    }
+    // content 样式
+    .scroll-content {
+        background: color($colors, link);
+        border-top: none;
+        .label {
+            line-height: 3rem;
+            padding-left: 2.2rem;
+            display: block;
+            font-size: 1.6rem;
+        }
+        .page-name {
+            margin: 0;
+            color: black;
+        }
+        .page_menu {
+            width: 100%;
+            display: inline-block;
+            background: white;
+            margin-bottom: 0;
+            padding: 0;
+            margin: 0;
+            li {
+                float: left;
+                width: 25%;
+                height: 6rem;
+                position: relative;
+                border-bottom: 1px solid color($colors, link);
+                list-style-type:none;
+                img{
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: 100px;
+                }
+                .grid_box {
+                    height: 5rem;
+                    text-align: center;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    border-right: 1px solid color($colors, link);
+                    span {
+                        margin-top: 3px;
+                        .iconfont {
+                            font-size: 28px;
+                            color: #fd7700;
+                        }
+                    }
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        ion-item-group {
+            display: grid
+        }
+    }
+}

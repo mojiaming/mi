@@ -1,0 +1,28 @@
+<!--
+  Generated template for the TurnChainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>领取佣金</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <p class="text">通过转链后链接所产生的订单才能绑定</p>
+
+  <ion-card >
+      <ion-card-content>
+        <p>待转换的链接:</p>
+        <ion-textarea [(ngModel)]="text" rows="5" maxLength="500" placeholder="请将您的商品链接粘贴到这里"></ion-textarea>
+      </ion-card-content>
+    </ion-card>
+
+    <button ion-button full round type="button" [disabled]="!text" (click)="onZhuanhuan()">转换</button>
+    <a (click)="onJiaoCheng()">查看教程</a>
+</ion-content>

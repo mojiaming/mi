@@ -1,0 +1,49 @@
+<!--
+  Generated template for the RankingRulesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>排名规则说明</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header text-wrap>
+      参与排名条件
+    </ion-card-header>
+    <ion-card-content>
+      为了使用户能够更加具有积极和热情，需要当月一级推广人员数量达到<span class="text-special"> {{system?.participation}}</span>才能参与排名，系统会自动统计，排名由当月推广人数高到低。
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header text-wrap>
+      排名奖励
+    </ion-card-header>
+    <ion-card-content>
+      为了奖励积极的用户，每月会评出一级推广人员数量最多的前三名用户进行现金奖励。奖励金额分别对应为：<br>
+      冠军<span class="text-special"> {{system?.champion}}</span>元<br>
+      亚军<span class="text-special"> {{system?.runnerup}}</span>元<br>
+      季军<span class="text-special"> {{system?.bronze}}</span>元<br>
+      每月一号进行统计奖励用户，奖励将于每月十号前进行结算，奖励会直接输入账户余额，用户可以用账户余额进行提现。
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-card-header text-wrap>
+        排名规则
+      </ion-card-header>
+      <ion-card-content>
+        推广数量越多排名越靠前，如果在排名中出现推广数量相同，决定排名前后的将是完成时间早的用户排名靠前。如有疑问请及时咨询客服，最终解释权归平台所有
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>

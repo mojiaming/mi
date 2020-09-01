@@ -1,0 +1,48 @@
+<!--
+  Generated template for the LoginEmailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>手机号登录</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <img src="assets/imgs/logo.png" class="img-content img1" />
+    <img src="assets/imgs/login_bg2.png" class="img-content"/>
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+        <ion-list>
+          <ion-item>
+            <ion-label  ><img src="assets/imgs/login-mail.png"/></ion-label>
+            <ion-input type="number" formControlName="username" clearInput  placeholder="请输入手机号码"></ion-input>
+          </ion-item>
+          <span *ngIf="!loginForm.controls.username.valid && loginForm.controls.username.touched" class="validation-failed">*请输入正确的手机号码</span>
+    
+          <ion-item>
+            <ion-label ><img src="assets/imgs/login-password.png"/></ion-label>
+            <ion-input type="password" formControlName="password" clearInput  placeholder="请输入密码"></ion-input>
+          </ion-item>
+          <span *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.touched" class="validation-failed">*请输入正确的密码，长度不少于4字符</span>
+    
+        </ion-list>
+        <div>
+          <button ion-button round type="submit" [disabled]="!loginForm.valid||submitted" class="login-button">登录</button>
+        
+         
+        </div>
+      </form>
+      <ion-row>
+          <ion-col text-center (click)="onRegister()">
+            <button ion-button small clear color="primary" type="buttom">注册</button>
+          </ion-col>
+          <ion-col text-center (click)="onRetrieve()">
+            <button ion-button small clear color="primary" type="buttom">忘记密码?</button>
+          </ion-col>
+        </ion-row>
+</ion-content>

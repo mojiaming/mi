@@ -1,0 +1,103 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+.ion-tab-icon-base {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 4px 4px 2px;
+}
+.ion-tab-icon-md-base {
+    min-width: 0 !important;
+    height: 35px;
+}
+$tabImageName: 'home' 'search' 'contact';
+@for $i from 1 to 4 {
+    //for ios
+    .ion-ios-tab-#{nth($tabImageName, $i)} {
+        @extend .ion-tab-icon-base;
+        content: url("../assets/ui/tabs/icon_#{nth($tabImageName, $i)}_on.png");
+    }
+    .ion-ios-tab-#{nth($tabImageName, $i)}-outline {
+        @extend .ion-tab-icon-base;
+        content: url("../assets/ui/tabs/icon_#{nth($tabImageName, $i)}_off.png");
+    }
+
+    // for android
+    .tabs-md .tab-button[aria-selected=true] {
+        .ion-md-tab-#{nth($tabImageName, $i)} {
+            @extend .ion-tab-icon-md-base;
+            content: url("../assets/ui/tabs/icon_#{nth($tabImageName, $i)}_on.png");
+        }
+    }
+    .tabs-md .tab-button[aria-selected=false] {
+        .ion-md-tab-#{nth($tabImageName, $i)} {
+            @extend .ion-tab-icon-md-base;
+            content: url("../assets/ui/tabs/icon_#{nth($tabImageName, $i)}_off.png");
+        }
+    }
+}
+.ion-ios-tab-task,.ion-ios-tab-task-outline,.ion-ios-tab-master,.ion-ios-tab-master-outline{
+    width: 32px !important;
+    height: 35px !important;
+}
+
+ion-app.ios [padding] {
+    padding: 0;
+}
+
+.toolbar-background-ios{
+    background: color($colors,white);
+  }
+
+// .segment-md .segment-button{
+//     height: 3rem;
+//     line-height: 3rem;
+//   }
+
+.share-goods {
+    .popover-content {
+        width: 90% !important;
+        margin-left: 5% !important;
+    }
+}
+
+//筛选
+.fiter{
+    text-align: center;
+    font-size: 1.4rem;
+    .center {
+        margin: 0 8px;
+    }
+    .startime {
+        text-align: right;
+    }
+    .endtime {
+        text-align: left;
+    }
+    .filterbtn {
+        color:color($colors, primary);
+        margin-right: 15px;
+    }
+    .selected {
+        color: color($colors, primary);
+    }
+
+}
+.cutline{
+    border-bottom: 1px solid color($colors,link);
+}

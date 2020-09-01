@@ -1,0 +1,31 @@
+<!-- <ion-header no-border>
+  <ion-navbar>
+    <ion-searchbar placeholder="输入您想搜索的商品名称" (ionFocus)="onSearch()"></ion-searchbar>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content fullscreen>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-3 class="menus">
+        <ion-scroll scrollY="true" style="height:100%">
+          <ion-list no-lines>
+            <ion-item button class="menuItem" *ngFor="let c of categories;let i=index" [ngClass]="{'active': i==0}"
+              text-center (click)="itemClick(c,$event)">
+              {{c.name}} </ion-item>
+          </ion-list>
+        </ion-scroll>
+      </ion-col>
+      <ion-col class="items">
+        <ion-scroll scrollY="true" #scroll style="height:100%">
+          <ion-row>
+            <ion-col *ngFor="let item of products" tappable col-4 text-center (click)="onItem(item)">
+              <img [src]="item.icon" />
+              <p >{{item.name}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-scroll>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

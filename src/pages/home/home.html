@@ -1,0 +1,318 @@
+<ion-header no-border>
+  <!-- <ion-navbar color="white">
+    <ion-searchbar placeholder="输入您想搜索的商品名称" (ionFocus)="onSearch()"></ion-searchbar>
+  </ion-navbar> -->
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segmentModel" mode="md" (ionChange)="segmentChanged($event)">
+
+      <ion-segment-button value="1">
+        推荐
+      </ion-segment-button>
+
+      <ion-segment-button value="35,122650005,50008165,50022517">
+        母婴
+      </ion-segment-button>
+
+      <ion-segment-button value="50002766,35,50008075">
+        食品
+      </ion-segment-button>
+
+      <ion-segment-button value="16">
+        女装
+      </ion-segment-button>
+
+      <ion-segment-button value="50010788">
+        彩妆
+      </ion-segment-button>
+
+      <ion-segment-button value="50014812,50025705">
+        洗护
+      </ion-segment-button>
+
+      <ion-segment-button value="1625">
+        内衣
+      </ion-segment-button>
+
+      <ion-segment-button value="21,50016348,50007218,50007218,26">
+        百货
+      </ion-segment-button>
+
+      <ion-segment-button value="50022703,50011972,50012100,50012082">
+        家电
+      </ion-segment-button>
+
+      <ion-segment-button value="50020808,50008164,50016348,21,122852001">
+        家居
+      </ion-segment-button>
+
+      <ion-segment-button value="14,50008090">
+        数码
+      </ion-segment-button>
+
+      <ion-segment-button value="1801,50023282">
+        护肤
+      </ion-segment-button>
+
+      <ion-segment-button value="30">
+        男装
+      </ion-segment-button>
+
+      <ion-segment-button value="50013886,50510002,50010728,50011699,50012029">
+        运动
+      </ion-segment-button>
+      <ion-segment-button value="50013864,50010404">
+        配饰
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div [ngSwitch]="segmentModel">
+    <div *ngFor="let category of Categoryhosts;let i = index">
+
+
+      <ion-list *ngSwitchCase="category.cid">
+
+        <div *ngIf="category.cid == 1" class="home">
+
+          <ion-slides id="slides1" autoplay="1" [loop]="true" speed="1000" pager="true" #slides autoplay="5000" *ngIf="imgList.length > 0">
+            <ion-slide (click)="onImg(item)" tappable *ngFor="let item of imgList">
+              <img [src]="item.img_url" />
+            </ion-slide>
+          </ion-slides>
+
+
+          <ion-row class="i" text-center>
+
+            <ion-col tappale (click)="onzhuanlian()" col-2 *ngIf="!isWXBrowser">
+              <img src="assets/imgs/zhuanlian.png" />
+              <p>领佣金</p>
+            </ion-col>
+
+            <ion-col tappale (click)="onNine()" col-2>
+              <img src="assets/imgs/nine.png" />
+              <p>9.9精选</p>
+            </ion-col>
+
+            <ion-col tappale (click)="onPdd()" col-2>
+              <img src="assets/imgs/pinduoduo.png" />
+              <p>拼多多</p>
+            </ion-col>
+
+            <ion-col tappale (click)="onTianmao()" col-2>
+              <img src="assets/imgs/tianmao.png" />
+              <p>天猫</p>
+            </ion-col>
+
+            <ion-col tappale (click)="onJingDong()" col-2>
+              <img src="assets/imgs/jingdong.png" />
+              <p>京东</p>
+            </ion-col>
+
+            <ion-col tappale (click)="onJuHuaSuan()" col-2>
+              <img src="assets/imgs/juhuasuan.png" />
+              <p>聚划算</p>
+            </ion-col>
+            <ion-col tappale (click)="onHaiTao()" col-2 *ngIf="isWXBrowser">
+              <img src="assets/imgs/haitao.png" />
+              <p>海淘</p>
+            </ion-col>
+
+          </ion-row>
+
+          <!-- <ion-row class="i bom" text-center>
+           
+          </ion-row> -->
+
+          <!-- <img class="tejia" src="assets/imgs/home1.png" /> -->
+
+          <!-- <ion-slides id="slides2" autoplay="1" [loop]="true" speed="1000" pager="true" #slides2 autoplay="8000" *ngIf="special1.length > 0">
+            <ion-slide *ngIf="special1.length > 0">
+              <ion-row>
+                <ion-col col-4 *ngFor="let item of special1" (click)="onGoods(item)" tappable>
+                  <img [src]="item.pict_url" />
+                  <p class="titel name">{{item.title}}</p>
+                  <p class="jia1"> 原价￥{{item.zk_final_price}}</p>
+                  <p class="jia2">卷后￥{{item.amount}}</p>
+                </ion-col>
+              </ion-row>
+            </ion-slide>
+
+            <ion-slide *ngIf="special2.length > 0">
+              <ion-row>
+                <ion-col col-4 *ngFor="let item of special2" (click)="onGoods(item)" tappable>
+                  <img [src]="item.pict_url" />
+                  <p class="titel name">{{item.title}}</p>
+                  <p class="jia1"> 原价￥{{item.zk_final_price}}</p>
+                  <p class="jia2">卷后￥{{item.amount}}</p>
+                </ion-col>
+              </ion-row>
+            </ion-slide>
+
+            <ion-slide *ngIf="special3.length > 0">
+              <ion-row>
+                <ion-col col-4 *ngFor="let item of special3" (click)="onGoods(item)" tappable>
+                  <img [src]="item.pict_url" />
+                  <p class="titel name">{{item.title}}</p>
+                  <p class="jia1"> 原价￥{{item.zk_final_price}}</p>
+                  <p class="jia2">卷后￥{{item.amount}}</p>
+                </ion-col>
+              </ion-row>
+            </ion-slide>
+
+            <ion-slide *ngIf="special4.length > 0">
+              <ion-row>
+                <ion-col col-4 *ngFor="let item of special4" (click)="onGoods(item)" tappable>
+                  <img [src]="item.pict_url" />
+                  <p class="titel name">{{item.title}}</p>
+                  <p class="jia1"> 原价￥{{item.zk_final_price}}</p>
+                  <p class="jia2">卷后￥{{item.amount}}</p>
+                </ion-col>
+              </ion-row>
+            </ion-slide>
+          </ion-slides> -->
+
+
+          <ion-row class="row-body">
+            <ion-col col-6 class="col-left" tappable (click)="onColumn(1)" >
+       
+              <p class="grab">
+                <span class="title">海抢购</span>
+               <span class="time" *ngIf="selectData && selectData.minTime >= 10">{{selectData.minTime}}点场</span>
+               <span class="time" *ngIf="selectData && selectData.minTime < 10">0{{selectData.minTime}}点场</span>
+               <span class="down_time">{{countdown}}</span>
+              </p>
+              <!--  -->
+              <ion-slides autoplay="1" [loop]="true" speed="1000" autoplay="6000"  *ngIf="special1.length > 0" #slides3>
+                  <ion-slide *ngFor="let item of special1">
+                      <img [ngStyle]="style2" [src]="item.pic_url" />
+                      <p ><span class="jia2 amount">￥{{item.zk_final_price}}</span>&nbsp;&nbsp;<span class="yuanjia reserve-price">{{item.reserve_price}}</span></p>  
+                      <!-- <span class="reserve-price">&nbsp;&nbsp;已抢{{item.sold_num}}</span> -->
+                  </ion-slide>
+              </ion-slides>
+
+            </ion-col>
+            <ion-col col-6 class="col-right" >
+              <ion-row class="row-top">
+                <ion-col col-12 class="col-img " tappable (click)="onColumn(2)"><img [ngStyle]="style" src="assets/imgs/home1.png" /></ion-col>
+              </ion-row>
+              <ion-row class="row-bottom">
+                <ion-col col-12 class="col-img" tappable (click)="onColumn(3)"><img [ngStyle]="style" src="assets/imgs/home2.png" /></ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+
+      
+
+          <!-- <p text-center class="p-text">— 每天上新 • 好券不断 —</p> -->
+          <img src="assets/imgs/large.jpg" />
+
+          <ion-list>
+            <ion-item *ngFor="let item of data" (click)="onGoods(item)" tappable>
+              <ion-thumbnail item-start>
+                <img [src]="item.pict_url">
+              </ion-thumbnail>
+              <h3 class="titel">{{item.title}}</h3>
+              <ion-row>
+                <ion-col col-6>
+                  <p>原价￥{{item.zk_final_price}}</p>
+                </ion-col>
+                <ion-col col-6>
+                  <p text-right>销量{{item.volume}}</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6>
+                  <p class="jia2 ">卷后￥<samp class="amount">{{item.amount}}</samp> </p>
+                </ion-col>
+                <ion-col col-6>
+                  <p><samp text-right class="juan ">{{item.coupon_amount}}元卷</samp></p>
+                </ion-col>
+              </ion-row>
+
+
+            </ion-item>
+            <p text-center class="dixian" *ngIf="ban">-----已经到底啦！我也是有底线的-----</p>
+          </ion-list>
+
+          <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="努力加载中..."></ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+        </div>
+        <div *ngIf="category.cid != 1" class="tabs">
+
+          <div class="tab">
+            <ion-row class="fiter cutline">
+              <ion-col tappable (click)="filter(i,0)" [ngClass]="{'selected':category.selectFlag == 0}">
+                综合
+              </ion-col>
+              <ion-col tappable (click)="filter(i,1)" [ngClass]="{'selected':category.selectFlag == 1}">
+                销量
+              </ion-col>
+              <ion-col tappable (click)="filter(i,2)" [ngClass]="{'selected':category.selectFlag == 2}">
+                佣金
+              </ion-col>
+              <ion-col tappable (click)="filter(i,3)" [ngClass]="{'selected':category.selectFlag == 3}">
+                价格
+                <ion-icon [name]="category.priceIcon"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </div>
+
+
+          <ion-grid>
+            <ion-row>
+              <ion-col col-6 *ngFor="let item of category.data" tappable (click)="onItem(item)">
+                <samp class="info" *ngIf="item.commission_rate && item.commission > 0">佣金约{{item.commission }}</samp>
+                <img [src]="item.pict_url" />
+                <p class="titel"><span *ngIf="item.user_type == 1">天猫</span>{{item.title}}</p>
+
+                <ion-row>
+                  <ion-col col-7 class="border">
+                    <p class="red">￥{{item.zk_final_price}} <samp class="yuanjia">￥{{item.reserve_price}}</samp></p>
+                  </ion-col>
+                  <ion-col col-5 text-right class="border" *ngIf="item.couponPrice">
+                    <p><samp text-right class="juan overflow">{{item.couponPrice}}元卷</samp></p>
+                  </ion-col>
+                </ion-row>
+                <p class="yishou">已抢 {{item.volume}}</p>
+
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <p text-center class="dixian" *ngIf="category.ban">-----已经到底啦！我也是有底线的-----</p>
+          <ion-infinite-scroll (ionInfinite)="doInfinite2($event,i)" *ngIf="!category.ban">
+            <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="努力加载中..."></ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+        </div>
+
+
+      </ion-list>
+    </div>
+  </div>
+
+  <!-- -->
+
+</ion-content>
+
+<ion-footer>
+  <div class="authorize" tappable (click)="onAuthorize()" *ngIf="showAuthorize">
+    <div>
+      <img src="assets/imgs/authorize.png">
+      <span class="span1">一键授权，立享优惠</span>
+      <span class="span2">淘宝授权</span>
+    </div>
+  </div>
+
+  <div class="authorize" tappable (click)="onApp()" *ngIf="isInitialize">
+    <div>
+      <img src="assets/imgs/logo.png">
+      <span class="span1">蜜淘APP</span>
+      <span class="span2">下载</span>
+    </div>
+  </div>
+</ion-footer>

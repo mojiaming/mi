@@ -1,0 +1,134 @@
+<!--
+  Generated template for the IncomeDetailedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      收入明细
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="state" mode="md">
+      <ion-segment-button value="one">
+        返利收入
+      </ion-segment-button>
+      <ion-segment-button value="tow">
+        分享收入
+      </ion-segment-button>
+      <ion-segment-button value="three">
+        排名奖励
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div [ngSwitch]="state">
+    <ion-list *ngSwitchCase="'one'">
+      <div text-center class="no-order" *ngIf="data1.length == 0">
+        <img src="assets/imgs/noorder.png" />
+        <p>您还没有相关收入</p>
+      </div>
+      <ion-item *ngFor="let item of data1">
+          <ion-avatar item-start>
+              <img [src]="item.wxUser.headimgurl">
+            </ion-avatar>
+        <ion-row>
+          <ion-col col-6>
+            <p class="jine">账户余额：{{item.balance}}</p>
+          </ion-col>
+          <ion-col col-6>
+            <p class="jine">收入金额：+ {{item.money}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-6>
+            <p class="overflow">贡献人：{{item.wxUser.nickname}}</p>
+          </ion-col>
+          <ion-col col-6>
+            <p class="overflow">{{item.create_time}}</p>
+          </ion-col>
+        </ion-row>
+
+      </ion-item>
+      <p text-center class="dixian" *ngIf="ban1 && data1.length>0">-----已经到底啦！我也是有底线的-----</p>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'tow'">
+        <div text-center class="no-order" *ngIf="data2.length == 0">
+            <img src="assets/imgs/noorder.png" />
+            <p>您还没有相关收入</p>
+          </div>
+          <ion-item *ngFor="let item of data2">
+              <ion-avatar item-start>
+                  <img [src]="item.wxUser.headimgurl">
+                </ion-avatar>
+            <ion-row>
+              <ion-col col-6>
+                <p class="jine">账户余额：{{item.balance}}</p>
+              </ion-col>
+              <ion-col col-6>
+                <p class="jine">收入金额：+ {{item.money}}</p>
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col col-6>
+                <p class="overflow">贡献人：{{item.wxUser.nickname}}</p>
+              </ion-col>
+              <ion-col col-6>
+                <p class="overflow">{{item.create_time}}</p>
+              </ion-col>
+            </ion-row>
+    
+          </ion-item>
+          <p text-center class="dixian" *ngIf="ban2 && data2.length>0">-----已经到底啦！我也是有底线的-----</p>
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase="'three'">
+      <div text-center class="no-order" *ngIf="data3.length == 0">
+          <img src="assets/imgs/noorder.png" />
+          <p>您还没有相关排名奖励</p>
+        </div>
+        <ion-item *ngFor="let item of data3">
+            <ion-avatar item-start>
+              <img src="assets/imgs/logo.png">
+            </ion-avatar>
+          <ion-row>
+            <ion-col col-6>
+              <p class="jine">账户余额：{{item.balance}}</p>
+            </ion-col>
+            <ion-col col-6>
+              <p class="jine">收入金额：+ {{item.money}}</p>
+            </ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col col-6>
+              <p class="overflow">发放奖励：{{item.wxUser.nickname}}</p>
+            </ion-col>
+            <ion-col col-6>
+              <p class="overflow">{{item.create_time}}</p>
+            </ion-col>
+          </ion-row>
+  
+        </ion-item>
+        <p text-center class="dixian" *ngIf="ban2 && data2.length>0">-----已经到底啦！我也是有底线的-----</p>
+  </ion-list>
+  </div>
+
+
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="努力加载中..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <ion-go-home></ion-go-home>
+</ion-content>

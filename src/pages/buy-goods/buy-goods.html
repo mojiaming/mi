@@ -1,0 +1,29 @@
+<!--
+  Generated template for the BuyGoodsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar >
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons right>
+        <button ion-button (click)="onClose()">
+            <ion-icon name="close" class="close"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <p class="code">{{msg}}{{text}}</p>
+  <button ion-button full color="primary" round (click)="successFun()">一键复制</button>
+
+  <p>(若一键复制失败，请长按文字手动复制)</p>
+  <img src="assets/imgs/steps.png" />
+  <p>使用说明: 复制掏口令后打开[手机掏宝]即可!</p>
+</ion-content>

@@ -1,0 +1,101 @@
+<!--
+  Generated template for the RegisterEmailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>手机登录</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+    <img src="assets/imgs/logo.png" class="img-content img1" />
+    <img src="assets/imgs/login_bg2.png" class="img-content"/>
+    <form [formGroup]="registerForm" (ngSubmit)="confirm(registerForm.value)">
+        <ion-list>
+          <ion-item>
+            <ion-label  ><img src="assets/imgs/login-mail.png"/></ion-label>
+            <ion-input type="number" formControlName="username" clearInput  placeholder="请输入手机号码"></ion-input>
+          </ion-item>
+          <span *ngIf="!registerForm.controls.username.valid && registerForm.controls.username.touched" class="validation-failed">*请输入正确的手机号码</span>
+    
+          <ion-item>
+            <ion-label ><img src="assets/imgs/login-password.png"/></ion-label>
+            <ion-input type="number" formControlName="mailCode" clearInput  placeholder="请输入验证码"></ion-input>
+            <button item-right ion-button round type="button" class="mail-buttom" (click)="getMailCode(registerForm.value)"
+            [disabled]="!registerForm.controls.username.valid || submitted ">{{btTimeText}}</button>
+          </ion-item>
+          <span *ngIf="!registerForm.controls.mailCode.valid && registerForm.controls.mailCode.touched" class="validation-failed">*请输入正确的验证码，长度为6位数</span>
+    
+        </ion-list>
+        <div>
+          <button ion-button round type="submit"  [disabled]="!registerForm.valid " class="login-button">登录</button>
+        
+         
+        </div>
+      </form>
+
+      <ion-item mode="md" *ngIf="inviteUser">
+          <ion-thumbnail item-start>
+            <img [src]="inviteUser.headimgurl">
+          </ion-thumbnail>
+          <h2>{{inviteUser.nickname}}</h2>
+          <p>邀请你加入蜜淘平台</p>
+        </ion-item>
+
+  <!-- <form [formGroup]="registerForm" (ngSubmit)="(confirm(registerForm.value))">
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed>手机号</ion-label>
+        <ion-input type="number" formControlName="username" placeholder="请输入手机号码"></ion-input>
+      </ion-item>
+      <span padding-left *ngIf="!registerForm.controls.username.valid && registerForm.controls.username.touched" class="validation-failed">*请输入正确的手机号码</span>
+
+      <ion-item>
+        <ion-label fixed>手机验证码</ion-label>
+        <ion-input type="text" formControlName="mailCode" placeholder="请输入手机验证码"></ion-input>
+        <button item-right ion-button round type="button" class="mail-buttom" (click)="getMailCode(registerForm.value)"
+          [disabled]="!registerForm.controls.username.valid || submitted ">{{btTimeText}}</button>
+      </ion-item>
+      <span padding-left *ngIf="!registerForm.controls.mailCode.valid && registerForm.controls.mailCode.touched" class="validation-failed">
+        *请输入手机验证码
+      </span>
+
+
+      <ion-item>
+        <ion-label fixed>密码</ion-label>
+        <ion-input type="password" formControlName="password" placeholder="请输入密码"></ion-input>
+      </ion-item>
+      <span padding-left *ngIf="!registerForm.controls.password.valid && registerForm.controls.password.touched" class="validation-failed">*密码长度不少于4，至少含有一个字母与数字</span>
+
+
+      <ion-item>
+        <ion-label fixed>邀请码</ion-label>
+        <ion-input type="text" formControlName="code" placeholder="请输入邀请码" (ionChange)="changeCode(registerForm.value.code)"></ion-input>
+      </ion-item>
+      <span padding-left *ngIf="!registerForm.controls.code.valid && registerForm.controls.code.touched" class="validation-failed">*请输入正确的邀请码</span>
+
+
+      <ion-item mode="md" *ngIf="inviteUser">
+        <ion-thumbnail item-start>
+          <img [src]="inviteUser.headimgurl">
+        </ion-thumbnail>
+        <h2>{{inviteUser.nickname}}</h2>
+        <p>邀请你加入蜜淘平台</p>
+      </ion-item>
+
+    </ion-list>
+    <div padding-horizontal>
+      <button ion-button full round type="submit" [disabled]="!registerForm.valid  || isInvite " class="register-buttom">注册</button>
+    </div>
+  </form> -->
+  <!-- <ion-go-home></ion-go-home> -->
+</ion-content>

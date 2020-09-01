@@ -1,0 +1,76 @@
+page-login {
+    ion-content{
+        ion-icon{
+            font-size: 3em;
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            border-radius: 99px;
+            right: 0px;
+            margin: 10% 10% 0 0;
+            z-index: 9;
+        }
+        background-color: color($colors,link) !important;
+        // background-color: color($colors,white);
+        ion-card{
+
+           
+            .bg{
+                width: 80%;
+                height: 80%;
+                position: absolute;
+                border-radius: 20px !important;
+            }
+            margin: 10% !important;
+            border-radius: 20px !important;
+            height: 80% !important;
+            width: 80% !important;
+            ion-card-content{
+                margin-top: 30%;
+                img{
+                    width: 100px;
+                    margin-left: 50%;
+                    left: -50px;
+                    position: relative;
+                }
+            }
+            .card-header-ios{
+                padding: 0;
+                height: 50px;
+                img{
+                    position: absolute;
+                    height: 50px;
+                    width: 60%;
+                    margin-left: 10%;
+                }
+            }
+            .button{
+                margin-left: 4.1%;
+                width: 91.8%;
+                height: 3.5rem;
+                font-size: 1.5rem;
+            }
+            ion-row{
+                margin-top: 20px;
+                ion-col{
+                    background-color: color($colors,link) !important;
+                    padding: 5px !important;
+                    background-color: red;
+                    border-radius: 999px;
+                    margin: 0 4.1% 0 4.1% !important;
+                    img{
+                        width: 20px;
+                        border-radius: 99px;
+                    }
+                    span{
+                        position: absolute;
+                        margin-left: 30px;
+                    }
+                } 
+                
+            }
+            
+        }
+    }
+}

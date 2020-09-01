@@ -1,0 +1,87 @@
+<!--
+  Generated template for the AuthHorizePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>授权步骤</ion-title>
+    <ion-buttons end>
+        <button ion-button  (click)="onSuccess()">
+          验证完成
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-card-header>
+      授权须知
+    </ion-card-header>
+    <ion-card>
+      <ion-card-header text-wrap>
+        为什么要授权？不授权是否可以？
+      </ion-card-header>
+      <ion-card-content>
+        根据淘宝2019-3-18 发布的 <span>《淘宝客私域用户管理规范》</span>， 为了用户更好的体验功能，更快速的绑定订单和不会出现丢单的情况，强烈建议用户授权。
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header text-wrap>
+        授权后淘宝账号是否有安全问题？
+      </ion-card-header>
+      <ion-card-content>
+        授权成功后平台只有权限查询和绑定用户的订单，并不会获得用户淘宝账号其它信息
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card-header text-wrap>
+      授权步骤(以口令授权为例)
+    </ion-card-header>
+
+    <ion-card-header text-wrap>
+      第一步，点击页面下方口令授权，然后按一键复制口令，成功后打开手机淘宝，进入下图
+    </ion-card-header>
+    <img src="./assets/imgs/1auth.jpg"/>
+
+    <ion-card-header text-wrap>
+      第二步，打开口令后，点击授权按钮，如下图
+    </ion-card-header>
+    <img src="./assets/imgs/2auth.jpg"/>
+
+    <!-- <ion-card-header text-wrap>
+      第三步，打开链接，授权给平台，如下图
+    </ion-card-header>
+    <img src="./assets/imgs/3auth.jpg"/>
+
+    <ion-card-header text-wrap>
+      第四步，以华为手机为例，选择浏览器打开，如下图
+    </ion-card-header>
+    <img src="./assets/imgs/4auth.jpg"/> -->
+
+    <ion-card-header text-wrap>
+      第三步，授权成功后出现以下页面，如下图
+    </ion-card-header>
+    <img src="./assets/imgs/3auth.jpg"/>
+
+    <ion-card-header text-wrap>
+      第四步，切换回蜜淘平台，点击右上角验证完成按钮或重新打开应用，如下图
+    </ion-card-header>
+    <img src="./assets/imgs/4auth.jpg"/>
+
+
+  </ion-list>
+  <ion-go-home></ion-go-home>
+</ion-content>
+
+<ion-footer>
+  <!-- <button ion-button color="light" (click)="onWeb()"> 网页授权 </button> -->
+  <button ion-button color="danger" (click)="onCode()" full>口令授权</button>
+
+</ion-footer>

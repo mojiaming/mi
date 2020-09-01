@@ -1,0 +1,61 @@
+<!--
+  Generated template for the SnapUpGoodsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content>
+
+  <div>
+      <ion-icon name="arrow-back" navPop></ion-icon>
+      <img src="assets/imgs/snap_up.jpg" />
+    
+      <div class="div-slides" #slides>
+        <div class="div-slide" *ngFor="let item of data;let i = index" [ngClass]="{true:'div-active'}[item.active]"
+          tappable (click)="onPeriod(item,i)">
+          <span class="div-title">{{item.period}}</span>
+          <br>
+          <span *ngIf="item.type == 1">已开抢</span>
+          <span *ngIf="item.type == 2">正在疯抢</span>
+          <span *ngIf="item.type == 3">即将开始</span>
+        </div>
+      </div>
+  </div>
+
+
+  <ion-list >
+    <ion-item *ngFor="let item of goodsList" (click)="onGoods(item)" tappable>
+      <ion-thumbnail item-start>
+        <img [src]="item.pic_url">
+      </ion-thumbnail>
+      <h3 class="titel">{{item.title}}</h3>
+      <ion-row>
+        <ion-col col-6>
+          <p>原价￥{{item.reserve_price}}</p>
+        </ion-col>
+        <ion-col col-6>
+          <progress-bar [total]="item.total_amount" [amount]="item.sold_num"></progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <p class="jia2 ">抢购价￥<samp class="amount">{{item.zk_final_price}}</samp> </p>
+        </ion-col>
+        <ion-col col-6>
+          <p><span  *ngIf="isGrad">已抢{{item.sold_num}}</span><samp text-right class="juan " *ngIf="isGrad">马上抢</samp><samp text-right class="juan2" *ngIf="!isGrad">即将开始</samp></p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+  <p text-center class="dixian" *ngIf="ban">-----已经到底啦！我也是有底线的-----</p>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="!ban">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="努力加载中..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <ion-fab bottom right>
+    
+    <img src="assets/imgs/back.png" class="back-img"  tappable (click)="scrollToTop()"/>
+  </ion-fab>
+</ion-content>

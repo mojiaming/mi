@@ -1,0 +1,108 @@
+page-goods-detailed {
+
+    // .toolbar-background-ios{
+    //     background:color($colors,primary);     
+    // }
+    .titel{
+        font-weight: 900;
+        font-size: 1.8rem;
+    }
+    ion-content{
+
+        .slides1{
+            height: auto;
+        }
+        .slides2{
+            height: 18rem !important; 
+            p{
+                margin: 0 ;
+            }
+            .titel{
+                display: -webkit-box;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;//当属性值为3，表示超出3行隐藏
+            }
+            img{
+                width: 100% !important;
+                height: 10rem;
+            }
+        }
+
+        .text-row{
+            border-top: 1px solid color($colors,link);
+        }
+        .jia1{
+            color:color($colors,primary);
+        }
+        .jia2{
+            font-size: 1.8rem;
+            font-weight: 900;
+        }
+        .jia3{
+            font-size: 1.4rem;
+            color:color($colors,primary);
+        }
+        .jia4{
+            color: #666;
+            font-size: 1.2rem;
+        }
+        .name{
+            font-size: 1.2rem;
+        }
+        .yuanjia{
+            text-decoration: line-through;
+        }
+        .juan{
+            background:url(../assets/imgs/goods_quan.png)no-repeat;  
+            width:100%;  
+            height:7rem;  
+            background-size:100% 100%;  
+            padding: 1rem;
+            p{
+                margin: 0;
+                padding: 2px;
+                color: color($colors,light);
+            }
+        }
+        p{
+            margin-left: 5px
+        }
+        .miaossu{
+            border-top: 1px solid color($colors,link);
+            padding: 5px;
+            margin: 0;
+        }
+        .coupon{
+            text-align: center;
+            width: 100%;
+            height: 2rem;
+            color: #fff;
+            font-size: 1.4rem;
+            background: rgba(255,113,233,0.8);
+            line-height: 2rem;
+            position: relative;
+            margin-top: -2.4rem !important;
+        }
+
+    }
+   
+    ion-footer {
+        button,a{
+            width: 100%;
+            height: 100% !important;
+            border-radius:0 !important;
+            padding: 10px !important;
+        }
+        ion-row{
+            margin: 0  !important;
+            padding: 0 !important;
+            ion-col{
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+    }
+
+}

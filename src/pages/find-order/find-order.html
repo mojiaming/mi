@@ -1,0 +1,26 @@
+<!--
+  Generated template for the FindOrderPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>找回订单</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <p class="red" tappable (click)="onToAuth()" *ngIf="showAuthorize">淘宝授权即可自动绑定订单,点击立即前往>></p>
+    <div class="order">
+      <img src="assets/imgs/order.png"/>
+      <ion-input type="text" placeholder="请输入淘宝订单号" [(ngModel)]="trade_id"></ion-input>
+    </div>
+    
+    <button ion-button full round type="button" [disabled]="!trade_id" (click)="onFindOrder()">找回</button>
+    <p class="red">系统订单录入存在一定延时，请在下单号五分钟再提交</p>
+    <img src="assets/imgs/find_order.png"/>
+</ion-content>

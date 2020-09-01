@@ -1,0 +1,20 @@
+page-associated-account {
+    .code{
+        font-size: 2rem !important;
+    }
+    ion-input{
+        font-size: 1.2rem !important;
+    }
+
+    .register-buttom{
+        height: 3rem;
+        margin-top: 20px;
+    }
+    p{
+        font-size: 1rem;
+        color: #9c9797;
+    }
+    .red{
+        color: color($colors,danger);
+    }
+}

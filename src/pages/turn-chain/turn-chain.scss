@@ -1,0 +1,21 @@
+page-turn-chain {
+    .text{
+        background-color: color($colors,link);
+        padding: 10px;
+        margin: 0;
+        text-align: center;
+    }
+    ion-textarea{
+        .text-input-ios{
+                background-color: color($colors,link);
+            }
+    }
+    .text-input-ios {
+        padding: 10px;
+        margin: 0;
+    }
+    a{
+        float: right;
+        margin: 10px;
+    }
+}

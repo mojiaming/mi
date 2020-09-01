@@ -1,0 +1,214 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #f53d3d,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  link:       #f2f2f2,
+  white:      #fff,
+  gray:       #999
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+$hairlines-width:  1px;//app统一为ios模式border不显示
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+
+$personalheader-linear-gradient: linear-gradient(180deg, #f53d3d 50%, #d48841 100%);
+
+
+
+.text-special{
+  color: color($colors,danger);
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+
+//文本超出省略
+.overflow{
+  display: block !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  overflow: hidden  !important;
+}
+
+
+.validation-failed{
+  float: right;
+  padding-right: 10px;
+  color: #ff0000;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+
+// 初始加载动画
+.splash-logo {
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  z-index: 2;
+  position: absolute;
+  width: 100px;
+}
+
+.splash-loader,
+.splash-loader::before,
+.splash-loader::after {
+  left: 50%;
+  top: 50%;
+  margin-left: -45px;
+  margin-top: -45px;
+  position: absolute;
+  vertical-align: middle;
+  background: #C0C0C0;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.splash-loader::before {
+  content: "";
+  animation: bounce 1.5s infinite;
+}
+
+.splash-loader::after {
+  content: "";
+  animation: bounce 1.5s -0.4s infinite;
+}
+
+@keyframes bounce {
+  0% {
+      transform: scale(0.8);
+      -webkit-transform: scale(0.8);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(2);
+      -webkit-transform: scale(2);
+      opacity: 0;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+      transform: scale(0.8);
+      -webkit-transform: scale(0.8);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(2);
+      -webkit-transform: scale(2);
+      opacity: 0;
+  }
+}
+
+.splash-screen {
+  background-color: #ffffff;
+  height: 100%;
+}
+
+.appSplash {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+.appSplash .container-loading {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  margin-top: -60px;
+}
+
+.p-text{
+  margin: -8px 0 0 0;
+  background-color: color($colors,link);
+  padding: 8px;
+}
+
+.back-img{
+  width: 3rem;
+}

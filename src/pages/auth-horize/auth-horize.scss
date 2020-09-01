@@ -1,0 +1,21 @@
+page-auth-horize {
+    ion-card-content{
+        span{
+            color: color($colors,danger);
+        }
+    }
+    ion-footer{
+        button{
+            width: 49%;
+            margin: 0 !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+        }
+    }
+    img{
+        width: 100%;
+    }
+    ion-card-header{
+        color:color($colors,danger)!important;
+    }
+}

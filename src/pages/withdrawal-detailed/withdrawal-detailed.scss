@@ -1,0 +1,20 @@
+page-withdrawal-detailed {
+
+    .no-order{
+        margin-top: 3rem;
+        img{
+            width: 6rem;
+            height: 6rem;
+        }
+    }
+
+    .dixian{
+        // margin: -8px 0 0 0;
+        background-color: color($colors,link);
+        padding: 10px;
+    }
+    .jine{
+        color:color($colors,danger);
+    }
+
+}

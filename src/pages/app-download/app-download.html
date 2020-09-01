@@ -1,0 +1,44 @@
+<!--
+  Generated template for the AppDownloadPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar>
+    <ion-title>APP使用说明</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="mb-stars"></div>
+    <section >
+        <img src="assets/imgs/loding.png">
+      </section>
+    <p>蜜淘平台</p>
+    <a class="btn"  hideWhen="android" (click)="onIos()">
+        <span class="ico ico-ios"></span>
+        <span class="txt">iPhone版正在上线</span>
+    </a>
+    <p class="red" tappable (click)="onShow()" hideWhen="android">临时代替教程</p>
+    <div class="jiaocheng" hideWhen="android">
+        <p>1.请在Safari浏览器处输入蜜淘网址：https://xxx.com</p>
+        <p>2.点击浏览器下方中间的按钮</p>
+        <p>3.弹出框中我们找到【添加到主屏幕】,直接添加确认即可</p>
+    </div>
+
+
+    <a class="btn" target="_blank" hideWhen="ios" [href]="androidUrl">
+        <span class="ico ico-md"></span>
+        <span class="txt">Android版下载</span>
+    </a>
+
+ 
+    <p *ngIf="isWXBrowser">您使用的是微信，请依次点击右上角分享按钮->在浏览器打开再进行下载</p>
+    <div class="mb-stars"></div>
+
+    <ion-go-home></ion-go-home>
+</ion-content>

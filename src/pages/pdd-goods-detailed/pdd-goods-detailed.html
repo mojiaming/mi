@@ -1,0 +1,124 @@
+<!--
+  Generated template for the PddGoodsDetailedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar >
+    <ion-title>{{data?.goods_name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    <ion-go-home></ion-go-home>
+    <ion-slides id="slides1" autoplay="1" loop="true" speed="1000" pager="true" #slides autoplay="5000" *ngIf="data && data.goods_gallery_urls"
+    class="slides1">
+
+    <ion-slide *ngFor="let item of data.goods_gallery_urls">
+      <img [src]="item" />
+    </ion-slide>
+
+  </ion-slides>
+
+  <p class="titel">{{data?.goods_name}}</p>
+  <ion-row class="text-row">
+    <ion-col clo-6><samp class="jia1">现价：<samp class="jia2">￥{{data?.min_group_price/100}}</samp></samp></ion-col>
+    <ion-col clo-6>原价：<samp class="yuanjia">￥{{data?.min_normal_price/100}}</samp></ion-col>
+  </ion-row>
+
+  <div class="juan" *ngIf="data && data.coupon_discount">
+    <!-- <img src="assets/imgs/goods_quan.png" /> -->
+    <p text-center>优惠卷<samp class="jia2">满{{data?.coupon_min_order_amount/100}}减{{data?.coupon_discount/100}}</samp></p>
+    <!-- <p text-center>使用门槛：{{goods?.coupon_start_fee}}</p> -->
+    <p text-center>使用期限：{{data?.coupon_start_time}} - {{data?.coupon_end_time }}</p>
+  </div>
+
+  <ion-row class="text-row">
+    <ion-col clo-6>销量：{{data?.sales_tip}}</ion-col>
+    <ion-col clo-6>描述分：{{data?.desc_txt}}</ion-col>
+  </ion-row>
+  <ion-row class="text-row">
+    <ion-col clo-6>店铺：</ion-col>
+    <ion-col clo-6>{{data?.mall_name}}</ion-col>
+  </ion-row>
+  <p class="miaossu" *ngIf="data && data.goods_desc">推荐理由</p>
+  <p>{{data?.goods_desc}}</p>
+
+  <div *ngIf="data && data.goods_gallery_urls">
+    <img [src]="item" *ngFor="let item of data.goods_gallery_urls" />
+  </div>
+
+  <!-- <p text-center class="p-text">— 猜你喜欢 —</p> -->
+  <img src="assets/imgs/love.jpg"/>
+
+  <ion-slides autoplay="1" loop="true" speed="1000"  autoplay="8000" *ngIf="similar1.length > 0" class="slides2">
+    <ion-slide *ngIf="similar1.length > 0">
+      <ion-row>
+        <ion-col col-4 *ngFor="let item of similar1" tappable (click)="onLick(item)">
+          <img [src]="item.goods_thumbnail_url" />
+          <p class="coupon" *ngIf="item.coupon_discount">优惠卷{{item.coupon_discount/100}}</p>  
+          <p class="titel name">{{item.goods_name}}</p>
+          <p class="jia3"> ￥{{item.min_group_price/100}}</p>
+          <p class="jia4"> 已疯抢{{item.sales_tip}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+    <ion-slide *ngIf="similar2.length > 0">
+      <ion-row>
+        <ion-col col-4 *ngFor="let item of similar2" tappable (click)="onLick(item)">
+          <img [src]="item.goods_thumbnail_url" />
+          <p class="coupon" *ngIf="item.coupon_discount">优惠卷{{item.coupon_discount/100}}</p>  
+          <p class="titel name">{{item.goods_name}}</p>
+          <p class="jia3"> ￥{{item.min_group_price/100}}</p>
+          <p class="jia4"> 已疯抢{{item.sales_tip}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+    <ion-slide *ngIf="similar3.length > 0">
+      <ion-row>
+        <ion-col col-4 *ngFor="let item of similar3" tappable (click)="onLick(item)">
+          <img [src]="item.goods_thumbnail_url" />
+          <p class="coupon"  *ngIf="item.coupon_discount">优惠卷{{item.coupon_discount/100}}</p>  
+          <p class="titel name">{{item.goods_name}}</p>
+          <p class="jia3"> ￥{{item.min_group_price/100}}</p>
+          <p class="jia4"> 已疯抢{{item.sales_tip}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+
+    <ion-slide *ngIf="similar4.length > 0">
+      <ion-row>
+        <ion-col col-4 *ngFor="let item of similar4" tappable (click)="onLick(item)">
+          <img [src]="item.goods_thumbnail_url" />
+          <p class="coupon" *ngIf="item.coupon_discount">优惠卷{{item.coupon_discount/100}}</p>  
+          <p class="titel name">{{item.goods_name}}</p>
+          <p class="jia3"> ￥{{item.min_group_price/100}}</p>
+          <p class="jia4"> 已疯抢{{item.sales_tip}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>
+
+
+<ion-footer no-border>
+    <ion-row>
+      <ion-col col-4>
+        <button ion-button color="link" (click)="onHome()">首页</button>
+      </ion-col>
+      <!-- <ion-col col-3>
+        <button ion-button color="light" (click)="onShare()">分享</button>
+      </ion-col> -->
+  
+      <ion-col col-8>
+        <button ion-button color="primary" (click)="onBuy()"> 跳转拼多多购买 </button>
+      </ion-col>
+    </ion-row>
+  </ion-footer>

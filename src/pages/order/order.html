@@ -1,0 +1,132 @@
+<!--
+  Generated template for the OrderPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      我的订单
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="state" mode="md">
+      <ion-segment-button value="one">
+        已付款
+      </ion-segment-button>
+      <ion-segment-button value="tow">
+        待返利
+      </ion-segment-button>
+      <ion-segment-button value="three">
+        已返利
+      </ion-segment-button>
+      <ion-segment-button value="four">
+        已失效
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-go-home></ion-go-home>
+    
+  <!-- <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="下拉刷新" refreshingSpinner="bubbles"></ion-refresher-content>
+  </ion-refresher> -->
+
+
+
+
+  <div [ngSwitch]="state">
+    <ion-list *ngSwitchCase="'one'" >
+      <div text-center class="no-order" *ngIf="data1.length == 0">
+        <img src="assets/imgs/noorder.png" />
+        <p>您还没有相关订单</p>
+      </div>
+      <ion-item *ngFor="let item of data1" mode="md">
+        <ion-thumbnail item-start>
+          <img *ngIf="!item.img_url" src="assets/imgs/noorder.png">
+          <img *ngIf="item.img_url" [src]="item.img_url">
+        </ion-thumbnail>
+        <h2>商品名：{{item.item_title}}</h2>
+        <p>订单号：{{item.trade_id}}</p>
+        <ion-row>
+          <ion-col col-12>支付金额：<samp>{{item.alipay_total_price}}</samp>元</ion-col>
+          <ion-col col-12>约返利：<samp>{{item.rebate}}</samp>元</ion-col>
+        </ion-row>
+      </ion-item>
+      <p text-center class="dixian" *ngIf="ban1 && data1.length>0">-----已经到底啦！我也是有底线的-----</p>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'tow'">
+      <div text-center class="no-order" *ngIf="data2.length == 0">
+        <img src="assets/imgs/noorder.png" />
+        <p>您还没有相关订单</p>
+      </div>
+      <ion-item *ngFor="let item of data2" mode="md">
+        <ion-thumbnail item-start>
+          <img *ngIf="!item.img_url" src="assets/imgs/noorder.png">
+          <img *ngIf="item.img_url" [src]="item.img_url">
+        </ion-thumbnail>
+        <h2>商品名：{{item.item_title}}</h2>
+        <p>订单号：{{item.trade_id}}</p>
+        <ion-row>
+          <ion-col col-12>支付金额：<samp>{{item.alipay_total_price}}</samp>元</ion-col>
+          <ion-col col-12>约返利：<samp>{{item.rebate}}</samp>元</ion-col>
+        </ion-row>
+      </ion-item>
+      <p text-center class="dixian" *ngIf="ban2 && data2.length>0">-----已经到底啦！我也是有底线的-----</p>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'three'">
+
+      <div text-center class="no-order" *ngIf="data3.length == 0">
+        <img src="assets/imgs/noorder.png" />
+        <p>您还没有相关订单</p>
+      </div>
+      <ion-item *ngFor="let item of data3" mode="md">
+        <ion-thumbnail item-start>
+          <img *ngIf="!item.img_url" src="assets/imgs/noorder.png">
+          <img *ngIf="item.img_url" [src]="item.img_url">
+        </ion-thumbnail>
+        <h2>商品名：{{item.item_title}}</h2>
+        <p>订单号：{{item.trade_id}}</p>
+        <ion-row>
+          <ion-col col-12>支付金额：<samp>{{item.alipay_total_price}}</samp>元</ion-col>
+          <ion-col col-12>约返利：<samp>{{item.rebate}}</samp>元</ion-col>
+        </ion-row>
+      </ion-item>
+      <p text-center class="dixian" *ngIf="ban3 && data3.length>0">-----已经到底啦！我也是有底线的-----</p>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'four'">
+      <div text-center class="no-order" *ngIf="data4.length == 0">
+        <img src="assets/imgs/noorder.png" />
+        <p>您还没有相关订单</p>
+      </div>
+      <ion-item *ngFor="let item of data4" mode="md">
+        <ion-thumbnail item-start>
+          <img *ngIf="!item.img_url" src="assets/imgs/noorder.png">
+          <img *ngIf="item.img_url" [src]="item.img_url">
+        </ion-thumbnail>
+        <h2>商品名：{{item.item_title}}</h2>
+        <p>订单号：{{item.trade_id}}</p>
+        <ion-row>
+          <ion-col col-12>支付金额：<samp>{{item.alipay_total_price}}</samp>元</ion-col>
+          <ion-col col-12>约返利：<samp>{{item.rebate}}</samp>元</ion-col>
+        </ion-row>
+      </ion-item>
+      <p text-center class="dixian" *ngIf="ban4 && data4.length>0">-----已经到底啦！我也是有底线的-----</p>
+    </ion-list>
+  </div>
+
+
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="努力加载中..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

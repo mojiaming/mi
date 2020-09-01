@@ -1,0 +1,37 @@
+page-login-email {
+
+    .img1{
+        margin-top: 30%;
+    }
+
+    .item-ios {
+        padding: 0 16px 0 16px;
+        border-bottom: 1px solid #dfdfdf;
+        position: relative;
+        font-size: 1.5rem;
+        min-height: 3.5rem;
+        height: 3.5rem;
+        width: 91.8%;
+        color: #000;
+        margin-left: 4.1%;
+    }
+
+    .login-button{
+        margin-left: 4.1%;
+        width: 91.8%;
+        height: 3.5rem;
+        font-size: 1.5rem;
+    }
+
+    .img-content {
+        width: 100px;
+        margin-left: 50%;
+        left: -50px;
+        position: relative;
+    }
+    ion-item{
+        img{
+            width: 20px;
+        }
+    }
+}

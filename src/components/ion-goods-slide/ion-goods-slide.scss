@@ -1,0 +1,49 @@
+ion-goods-slide {
+    ion-slides{
+        height: 18rem !important; 
+        .row{
+            height: 18rem !important;
+            img{
+                width: 100%;
+                height: 10rem;
+            }
+            p{
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+           
+            .jia1{
+                color: #666;
+                font-size: 1.2rem;
+            }
+            .name{
+                font-size: 1.2rem;
+            }
+            .coupon{
+                text-align: center;
+                width: 100%;
+                height: 2rem;
+                color: #fff;
+                font-size: 1.4rem;
+                background: rgba(255,113,233,0.8);
+                line-height: 2rem;
+                position: relative;
+                margin-top: -2.4rem !important;
+            }
+
+            .titel{
+                display: -webkit-box;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;//当属性值为3，表示超出3行隐藏
+            }
+            .jia2{
+                font-size: 1.4rem;
+                color:color($colors,primary);
+            }
+        }
+        
+    }
+}

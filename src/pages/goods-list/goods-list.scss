@@ -1,0 +1,109 @@
+page-goods-list {
+
+    
+    .searchbar-ios .searchbar-input {
+        border-radius: 999px !important;
+        background-color: color($colors,link) !important;
+    }
+    
+    .titel{
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;//当属性值为3，表示超出3行隐藏
+        span{
+            color: color($colors,white);
+            font-size: 0.8rem;
+            padding: 2px;
+            margin: 0 2px 0 0;
+            background-color: color($colors,danger);
+        }
+    }
+ 
+    ion-content{
+        background-color: color($colors,link)!important;
+    // .toolbar-background-ios{
+    //     background:color($colors,primary);     
+    // }
+    .yuanjia{
+        text-decoration: line-through;
+    }
+    p{
+        margin: 5px;
+        padding:0;
+    }
+        ion-grid{
+            padding: 3px !important;
+            margin: 0 !important;
+            ion-row{
+                ion-col{
+                    border: 3px solid color($colors,link);
+                    background-color: color($colors,white);
+                    img{
+                        // width: 12rem;
+                        // height: 12rem;
+                        min-height: 12rem;
+                    }
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    .border{
+                        border: none !important;
+                    }
+                    .yishou{
+                        color: #745656;
+                        font-size: 0.8rem;
+                    }
+                    .juan{
+                        background: -moz-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: -webkit-gradient(linear,left top,left right,color-stop(0,#FF5E5E),color-stop(100%,#FF927C));
+                        background: -webkit-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: -o-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: -ms-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: linear-gradient(to left,#FF5E5E 0,#FF927C 100%);
+                        padding: 3px 10px;
+                        color: color($colors,link);
+                        text-align: center;
+                        font-size: 1rem;
+                        font-style: italic !important;
+                        display: block;
+                        min-width: 3rem;
+                        float: right;
+                        border-radius: 5px;
+                        samp{
+                            font-size: 1.5rem;
+                            font-weight: 900;
+                        }
+                    }
+                    .red{
+                        color: color($colors,danger);
+                    }
+                    .info{
+                        position: absolute;
+                        right: 0;
+                        // top: 12rem;
+                        height: 20px;
+                        // margin: -25px 5px 0 0;
+                        background: -moz-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: -webkit-gradient(linear,left top,left right,color-stop(0,#FF5E5E),color-stop(100%,#FF927C));
+                        background: -webkit-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: -o-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: -ms-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+                        background: linear-gradient(to left,#FF5E5E 0,#FF927C 100%);
+                        padding: 3px 10px;
+                        color: color($colors,link);
+                        text-align: center;
+                        font-size: 1rem;
+                        font-style: italic !important;
+                        display: block;
+                        min-width: 3rem;
+                        float: right;
+                        border-radius: 99px 0 0 99px;
+                    }
+                }
+               
+            }
+           
+        }
+    }
+}

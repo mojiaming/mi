@@ -1,0 +1,33 @@
+page-buy-goods {
+    .close{
+        font-size: 4rem;
+    }
+    p{
+        text-align: center;
+        -webkit-user-select: auto !important;
+        color: #666;
+    }
+    .code{
+        text-align: center;
+        width: 80%;
+        height: 6rem;
+        margin: 0 auto;
+        border: 1px dashed color($colors,danger);
+        border-radius: 0.08rem;
+        margin-top: 0.3rem;
+        color: #666;
+        line-height: 6rem;
+        font-size: 1.8rem;
+    }
+
+    .button{
+        width: 80%;
+        margin-left: 10% !important;
+        height: 2.2em;
+    }
+
+    img{
+        width: 80%;
+        margin-left: 10%;
+    }
+}

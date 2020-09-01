@@ -1,0 +1,106 @@
+page-snap-up-goods {
+    ion-icon{
+        position: absolute;
+        padding: 10px;
+        font-size: 3.5rem;
+        color: color($colors,light)
+    }
+    .div-slides{
+        display: -webkit-box;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        margin-top: -46px;
+        z-index: 9999;
+        position: relative;
+        .div-slide{
+            .div-title{
+                font-size: 2rem;
+                font-weight: 900;
+            }
+            color: color($colors,white);
+            width: 85px;
+            text-align: center;
+            font-size: 1.2rem;
+            height: 48px;
+        }
+        .div-active {
+            background: -webkit-linear-gradient(left,#FF9C00 ,#FF5D00);
+            background: -o-linear-gradient(right,#FF9C00,#FF5D00);
+            background: -moz-linear-gradient(right,#FF9C00,#FF5D00);
+            background: linear-gradient(to right,#FF9C00 ,#FF5D00);
+            background-image: url(../assets/imgs/navbg.png);
+            background-repeat: no-repeat;
+            // background-size: auto 100%;
+            background-position: bottom;
+        }
+    }
+
+    .div-slides::-webkit-scrollbar {
+        background-color: transparent;
+    }
+
+    .dixian{
+        margin: 0;
+        background-color: color($colors,link);
+        padding: 10px;
+    }
+    ion-list{
+        padding: 0!important;
+        margin: -4px 0 0 0 !important;
+        .item-block:first-child {
+            border-top: none !important;
+        }
+        .jia2{
+            font-size: 1.4rem;
+            color:color($colors,primary);
+            font-weight: 900;
+        }
+        img{
+            width: 8rem !important;
+            height: 8rem !important;
+        }
+        .juan{
+            background: -moz-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+            background: -webkit-gradient(linear,left top,left right,color-stop(0,#FF5E5E),color-stop(100%,#FF927C));
+            background: -webkit-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+            background: -o-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+            background: -ms-linear-gradient(left,#FF5E5E 0,#FF927C 100%);
+            background: linear-gradient(to left,#FF5E5E 0,#FF927C 100%);
+            padding: 3px 10px;
+            color: color($colors,link);
+            text-align: center;
+            font-size: 1rem;
+            font-style: italic !important;
+            display: block;
+            min-width: 3rem;
+            float: right;
+            border-radius: 5px;
+        }
+        .juan2{
+            background-color: #2AC064;
+            padding: 3px 10px;
+            color: color($colors,link);
+            text-align: center;
+            font-size: 1rem;
+            font-style: italic !important;
+            display: block;
+            min-width: 3rem;
+            float: right;
+            border-radius: 5px;
+        }
+        p{
+            margin: 0;
+            background-color: #fff;
+            padding: 0;
+        }
+        .amount{
+            font-size: 1.8rem !important;
+        }
+        .titel{
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+           
+        }
+    }
+}

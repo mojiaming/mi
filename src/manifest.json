@@ -1,0 +1,22 @@
+{
+  "name": "蜜淘",
+  "short_name": "蜜淘",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "assets/imgs/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#f53d3d",
+  "distribute": {
+    "google": {
+      "schemes": [
+        "mitaopt"
+      ]
+    }
+  }
+}

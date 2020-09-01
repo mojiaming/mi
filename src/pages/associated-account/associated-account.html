@@ -1,0 +1,37 @@
+<!--
+  Generated template for the AssociatedAccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>关联公众号</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item >
+    <ion-label stacked class="code">输入关联码</ion-label>
+    <ion-input type="text" placeholder="请输入关联码" [(ngModel)]="code" (ionChange)="onChange()"></ion-input>
+  </ion-item>
+  <ion-item mode="md" *ngIf="user">
+    <ion-thumbnail item-start>
+      <img [src]="user.headimgurl">
+    </ion-thumbnail>
+    <h2>{{user.nickname}}</h2>
+    <p>请确认账号是否一致</p>
+  </ion-item>
+  <button ion-button full round type="button" (click)="onAuth()" [disabled]="!code" class="register-buttom" *ngIf="!user">验证</button>
+  <button ion-button full round type="button" (click)="onAssociated()" *ngIf="user" class="register-buttom">登录</button>
+
+
+  <p>如何获得关联码：</p>
+  <p>请在蜜淘平台公众号点击[优惠商城]菜单->[会员中心]->[关联码]，复制即可</p>
+  <p>点击[验证]确认无误后，点击[关联]进行登录</p>
+  <p class="red">关联码不可告知他人，以免造成账号安全风险</p>
+</ion-content>

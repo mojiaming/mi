@@ -1,0 +1,59 @@
+<!--
+  Generated template for the PddGoodsListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-searchbar placeholder="输入您想搜索的商品名称" showCancelButton="true" cancelButtonText="搜索" (ionCancel)="onSearch()"
+      [(ngModel)]="searchtext" (keyup.enter)="onSearch()"></ion-searchbar>
+  </ion-navbar>
+  <!-- <ion-toolbar color="white" >
+      <ion-row class="fiter cutline">
+        <ion-col tappable (click)="filter(0)" [ngClass]="{'selected':selectFlag == 0}">
+          销量
+          <ion-icon [name]="salesIcon"></ion-icon>
+        </ion-col>
+        <ion-col tappable (click)="filter(14)" [ngClass]="{'selected':selectFlag == 14}">
+          佣金
+          <ion-icon [name]="commissionIcon"></ion-icon>
+        </ion-col>
+        <ion-col tappable (click)="filter(4)" [ngClass]="{'selected':selectFlag == 4}">
+          价格
+          <ion-icon [name]="priceIcon"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar> -->
+</ion-header>
+
+
+<ion-content>
+    <ion-go-home></ion-go-home>
+    <ion-grid>
+        <ion-row>
+          <ion-col col-6 *ngFor="let item of data" tappable (click)="onItem(item)">
+            <samp class="info" *ngIf="item.commission && item.commission > 0">佣金约{{item.commission }}</samp>
+            <img [src]="item.imgUrl" />
+            <p class="titel">{{item.skuName}}</p>
+    
+            <ion-row>
+              <ion-col col-7 class="border">
+                <p class="red">￥{{item.price}} <samp class="yuanjia">￥{{item.priceInfo.price}}</samp></p>
+              </ion-col>
+              <ion-col col-5 text-right class="border" *ngIf="item.couponPrice">
+                <p><samp text-right class="juan overflow">{{item.couponPrice}}元卷</samp></p>
+              </ion-col>
+            </ion-row>
+            <p class="yishou">已抢 {{item.inOrderCount30Days}}</p>
+    
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <p text-center class="dixian" *ngIf="ban">-----已经到底啦！我也是有底线的-----</p>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)"  *ngIf="!ban">
+          <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="努力加载中..."></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+
+</ion-content>

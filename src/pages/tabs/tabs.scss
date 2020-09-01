@@ -1,0 +1,20 @@
+page-tabs{
+    .tabs-ios{
+        .tab-button.icon-only{
+            position:relative;
+            overflow:visible;
+            text-align:center;
+            left:0;
+            .tab-button-icon{
+                width:60px !important;
+                height:60px !important;
+                line-height: 50px;
+                margin-top: -12px;
+                background:white;
+                border-radius:50%;
+                border:5px solid #fff;
+                box-shadow:0 -2px 3px rgba(100,100,100,.4);
+            }
+        }
+    }
+}

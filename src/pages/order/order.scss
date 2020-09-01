@@ -1,0 +1,26 @@
+page-order {
+    .no-order{
+        margin-top: 3rem;
+        img{
+            width: 8rem;
+            height: 8rem;
+        }
+    }
+    h2{
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
+    .col{
+        font-size: 1.4rem;
+        padding: 0;
+        samp{
+            color: color($colors,primary);
+        }
+    }
+    .dixian{
+        // margin: -8px 0 0 0;
+        background-color: color($colors,link);
+        padding: 10px;
+    }
+}

@@ -1,0 +1,63 @@
+<!--
+  Generated template for the WithdrawalDetailedPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar >
+    <ion-title>提现明细</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <div text-center class="no-order" *ngIf="data.length == 0">
+      <img src="assets/imgs/noorder.png" />
+      <p>您还没有相关提现记录</p>
+    </div>
+    <ion-item *ngFor="let item of data">
+        <ion-badge item-end *ngIf="item.state == 1">已成功</ion-badge>
+        <ion-badge item-end *ngIf="item.state == 0">待处理</ion-badge>
+        <ion-badge item-end *ngIf="item.state == 9">已作废</ion-badge>
+      <ion-row>
+        <ion-col col-6>
+          <p class="jine">剩余金额：{{item.balance}}</p>
+        </ion-col>
+        <ion-col col-6>
+          <p>申请金额：-{{item.money}}</p>
+         
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-6>
+            <p>总金额：{{item.total_money}}</p>
+        </ion-col>
+        <ion-col col-6>
+          <p>{{item.create_time}}</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-6>
+          <p>提现账号：</p>
+        </ion-col>
+        <ion-col col-6>
+          <p class="jine"> {{item.cash_account}}</p>
+        </ion-col>
+      </ion-row>
+
+    </ion-item>
+
+    <p text-center class="dixian" *ngIf="ban && data.length>0">-----已经到底啦！我也是有底线的-----</p>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="努力加载中..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <ion-go-home></ion-go-home>
+</ion-content>
