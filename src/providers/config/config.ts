@@ -16,13 +16,16 @@ export class ConfigProvider {
   }
 
   //ip地址
+  // 文件访问地址
   static FILE_URL: string = 'http://192.168.10.1:8080/file';
+  // 接口请求地址
   static API_URL: string = 'http://192.168.10.1:8080';
-  static WS_API: string = 'http://api.vephp.com';
-  static APP_API: string = 'http://192.168.10.1:8080/download';
+  //app下载地址
+  static DOWNLOAD_URL: string = 'http://192.168.10.1:8080/download';
 
-  // 微信应用
-
+  /**
+   * json请求头
+   */
   getHeaders(): any {
     return {
       headers: {
@@ -33,6 +36,9 @@ export class ConfigProvider {
     };
   }
 
+  /**
+   * form请求头
+   */
   getFormHeaders(): any {
     return {
       headers: {
@@ -44,10 +50,13 @@ export class ConfigProvider {
 }
 
 
+/**
+ * 热更新key
+ */
 export const CODE_PUSH_DEPLOYMENT_KEY = {
   'android': {     
-    'Production': 'rh_1nL6jTFPD09bI6aG2f1mM96b1458c1fc1--42af-921e-6ba60824d8b1',
-    'Staging': 'RuLutg8obRyKNCYUKMKjbZKzF2MB458c1fc1-99af-921e-6ba60824d8b1'
+    'Production': 'rh_1nL6jTFPD09bI6aG2f1mM96b14581--42af-921e-6ba60824d8b1',
+    'Staging': 'RuLutg8obRyKNCYUKMKjbZKzF2MB41fc1-99af-921e-6ba60824d8b1'
   },
   'ios': {
     'Production': '你的ios Production key',

@@ -61,13 +61,12 @@ export class HttpServiceProvider {
 
   }
 
-  public getUrl(url: string) {
-    return this.http.get(url)
-      .toPromise()
-      .catch(err => this.handleError(err));
 
-  }
 
+  /**
+   * 请求失败处理
+   * @param error 
+   */
   private handleError(error: Response | any) {
     let status = error.status;
     this.loading.hideLoading();

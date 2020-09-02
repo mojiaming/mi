@@ -72,18 +72,6 @@ export class LoginPage {
           })
         }
       })
-      // alert('https://api.weixin.qq.com/sns/oauth2/access_token?appid=' + ConfigProvider.WeChatId + '&secret=' + ConfigProvider.WeChatSecret + '&code=' + response.code + '&grant_type=authorization_code');
-      // this.httpService.getUrl('https://api.weixin.qq.com/sns/oauth2/access_token?appid=' + ConfigProvider.WeChatId + '&secret=' + ConfigProvider.WeChatSecret + '&code=' + response.code + '&grant_type=authorization_code').then((res: any) => {
-
-      //   res = JSON.parse(res);
-      //   alert(res.access_token)
-      //   this.httpService.getUrl('https://api.weixin.qq.com/sns/userinfo?access_token=' + res.access_token + '&openid=' + res.openid).then((user: any) => {
-      //     alert(JSON.stringify(user))
-      //     user = JSON.parse(user);
-         
-
-      //   })
-      // })
 
     }, (error) => {
      this.toastService.showToast('微信授权失败');

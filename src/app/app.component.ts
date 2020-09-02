@@ -45,9 +45,13 @@ export class MyApp {
   }
 
   async initializeApp() {
+
+    //监听退出登录广播
     this.events.subscribe('login:go', () => {
       this.nav.setRoot('LoginPage');
     });
+
+    //监听登录广播
     this.events.subscribe('user:login', () => {
       this.login();
     })
@@ -56,17 +60,13 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
 
-      // this.nav.setRoot(TabsPage, { value: 0 });
-      // alert(new Date());
-
-      // alert('start')
       // 监听程序从后台切换到前台
       document.addEventListener("resume", () => {
-
+        // 获取剪贴板内容
         this.getClipboard();
-
       }, false)
 
+      // 微信公众号传参
       if (this.helper.isWXBrowser()) {
         let param = this.GetRequest();
         if ((param && param['?token']) || this.storageService.read('token')) {

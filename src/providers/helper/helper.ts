@@ -91,7 +91,7 @@ export class HelperProvider {
       if (this.isIos()) {
         this.openUrlByBrowser('https://itunes.apple.com/cn');
       } else if (this.isAndroid()) {
-        this.openUrlByBrowser(ConfigProvider.APP_API + '/apk/mitaoAndroid.apk');
+        this.openUrlByBrowser(ConfigProvider.DOWNLOAD_URL + '/apk/mitaoAndroid.apk');
       }
     })
   }

@@ -18,7 +18,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class AppDownloadPage {
   isWXBrowser:boolean = false;
   isShow:boolean = false;
-  androidUrl: string = ConfigProvider.APP_API + '/apk/mitaoAndroid.apk';
+  androidUrl: string = ConfigProvider.DOWNLOAD_URL + '/apk/mitaoAndroid.apk';
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private helper: HelperProvider) {
   }
