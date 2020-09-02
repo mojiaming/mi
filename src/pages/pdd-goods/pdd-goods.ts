@@ -69,16 +69,16 @@ export class PddGoodsPage {
 
     this.name = this.navParams.get('name');
     if (this.name) {
-      this.getData('/pdd/getRecommend/' + this.navParams.get('value'));
+      this.getData('/pddRecommend.json');
     } else {
       // 获取类目商品
-      this.httpService.get('/pdd/getThemeList').then((res: any) => {
+      this.httpService.get('/pddThemeList.json').then((res: any) => {
         if (res && res.msg == 'OK') {
           this.themeList = res.list;
           this.storage.set('pdd:themeList',this.themeList);
         }
       })
-      this.getData('/pdd/getTopGoodsList');
+      this.getData('/pddTopGoodsList.json');
     }
 
 
@@ -87,12 +87,7 @@ export class PddGoodsPage {
 
   pidGenerate(): Promise<any> {
     return new Promise((resolve) => {
-      this.httpService.get('/pdd/pidGenerate').then((res: any) => {
-        if (res && res.msg == 'OK') {
-          this.storageService.write('pddPid', 'Y');
-        }
-        resolve(res);
-      });
+      this.storageService.write('pddPid', 'Y');
     });
   }
 
@@ -179,17 +174,6 @@ export class PddGoodsPage {
    */
   onItem(item) {
     this.navCtrl.push('PddGoodsDetailedPage', { value: item.goods_id });
-    // if (!this.helper.isMobile()) {
-    //   this.navCtrl.push('PddGoodsDetailedPage', { value: item.goods_id });
-    // } else {
-    //   this.loadingService.showLoading();
-    //   this.httpService.get('/pdd/urlGenerate/' + item.goods_id).then((res: any) => {
-    //     this.loadingService.hideLoading();
-    //     if (res && res.msg == 'OK') {
-    //       this.themeableService.create(res.data.mobile_short_url);
-    //     }
-    //   })
-    // }
 
   }
 
@@ -206,19 +190,6 @@ export class PddGoodsPage {
    * @param resourceType 
    */
   ongetResourceUrl(resourceType) {
-    this.loadingService.showLoading();
-    this.httpService.get('/pdd/getResourceUrl/' + resourceType).then((res: any) => {
-      this.loadingService.hideLoading();
-      if (res && res.msg == 'OK') {
-        if(this.helper.isMobile()){
-          this.taobaoService.show(res.data.url,'pdd').catch(()=>{
-            this.helper.openUrlByBrowser(res.data.short_url);
-          });
-        } else {
-          this.helper.openUrlByBrowser(res.data.short_url);
-        }
-        
-      }
-    })
+
   }
 }

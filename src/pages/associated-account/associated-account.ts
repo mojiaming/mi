@@ -41,34 +41,14 @@ export class AssociatedAccountPage {
    * 验证事件
    */
   onAuth(){
-    this.loadingService.showLoading();
-    this.httpService.post('/user/select',{openid:this.code}).then((res:any) => {
-      this.loadingService.hideLoading();
-      if(res && res.msg == 'OK'){
-        this.user = res.data;
-      } else if(res.msg){
-        this.toastService.showToast(res.msg);
-      }
-    })
+    
   }
 
   /**
    * 关联事件
    */
   onAssociated(){
-    this.loadingService.showLoading('登录中...');
-    this.httpService.post('/user/loginId',{openid:this.code}).then((res:any) => {
-      this.loadingService.hideLoading();
-      if(res && res.msg == 'OK'){
-        this.storageService.write('login:type', 'id');
-        this.storageService.write('UserInfo', res.data);
-        this.globalData.token = res.data.token;
-        this.storageService.write('token', this.globalData.token);
-        this.navCtrl.setRoot(TabsPage, { value: 0 });
-      } else if(res.msg){
-        this.toastService.showToast(res.msg);
-      }
-    })
+ 
   }
 
   onChange(){

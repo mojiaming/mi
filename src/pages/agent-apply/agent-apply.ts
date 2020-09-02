@@ -44,61 +44,19 @@ export class AgentApplyPage {
     if (this.userInfo.type == 2) {
       this.toastService.showToast('您已经是尊贵的代理人');
       this.disable = true;
-    } else {
-      this.loadingService.showLoading();
-      this.httpService.post('/agent/select', this.param).then(res => {
-        this.loadingService.hideLoading();
-        if (res && res['data']) {
-          this.disable = true;
-          this.toastService.showToast('你已经申请过！');
-        }
-      })
-    }
+    } 
 
+    this.amount = 50;
 
-
-    this.getData1();
-    this.getData2();
-    this.getData3();
+    this.total = 100;
 
 
   }
 
-
-  getData1(infiniteScroll?: any) {
-    this.httpService.post('/relevance/selectAll', { token: this.param.token, pageNo: 0, pageSize: 0 }).then(res => {
-      if (res && res['data']) {
-        this.amount += Number(res['total']);
-      }
-    })
-  }
-
-
-  getData2(infiniteScroll?: any) {
-    this.httpService.post('/relevance/selectAllTow', { token: this.param.token, pageNo: 0, pageSize: 0 }).then(res => {
-
-      if (res && res['data']) {
-        this.amount += Number(res['total']);
-      }
-    })
-  }
-
-  getData3(){
-    this.httpService.get('/system/select').then(res => {
-      if (res && res['data']) {
-        this.total += Number(res['data'].applications);
-      }
-      this.isSubmit = false;
-    })
-  }
+ 
 
   onSubmit() {
-    this.httpService.post('/agent/insert', this.param).then(res => {
-      if (res && res['data']) {
-        this.toastService.showToast('已提交申请，请等候审核。');
-        this.disable = true;
-      }
-    })
+    this.toastService.showToast('已提交申请，请等候审核。');
   }
 
 }

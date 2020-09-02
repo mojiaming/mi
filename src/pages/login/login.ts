@@ -51,28 +51,7 @@ export class LoginPage {
    */
   onWeChat() {
     Wechat.auth("snsapi_userinfo", "_" + (+new Date()), (response) => {
-      this.loadingService.showLoading();
-      this.httpService.post('/user/wechatCode',{code :response.code}).then((user:any) => {
-        if (user && user.msg == 'OK') {
-          this.httpService.post('/user/loginWechat', {openid:user.data.openid}).then((data: any) => {
-            this.loadingService.hideLoading();
-            if (data && data.msg == 'OK') {
-              // 用户已存在
-              this.globalData.token = data.data.token;
-              data.data.openid = user.data.openid;
-              this.storageService.write('login:type', 'wechat');
-              this.storageService.write('token', this.globalData.token);
-              this.storageService.write("UserInfo", data.data);
-              this.navCtrl.setRoot(TabsPage, { value: 0 });
-            } else {
- 
-              // 用户不存在
-              this.navCtrl.push('InviteCodePage', { value: user.data });
-            }
-          })
-        }
-      })
-
+      this.navCtrl.setRoot(TabsPage, { value: 0 });
     }, (error) => {
      this.toastService.showToast('微信授权失败');
     })

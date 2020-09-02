@@ -58,22 +58,7 @@ export class LoginEmailPage {
     // let password = user.password+'';
     user.password = Md5.hashStr(user.password);
 
-    this.httpService.post('/user/loginMail',user).then((res:any) => {
-      this.submitted = false;
-      if(res && res.msg == 'OK'){
-        res.data.password = user.password;
-        res.data.username = user.username;
-        this.storageService.write('UserInfo', res.data);
-        this.storageService.write('login:type', 'phone');
-        this.globalData.username = res.data.nickname;
-        this.globalData.token = res.data.token;
-        this.storageService.write('token', this.globalData.token);
-        this.storageService.write('username', user.username);
-        this.navCtrl.setRoot(TabsPage, { value: 0 });
-      } else if(res.msg){
-        this.toastService.showToast(res.msg);
-      }
-    })
+    this.navCtrl.setRoot(TabsPage, { value: 0 });
   }
 
 

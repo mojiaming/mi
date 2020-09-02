@@ -1,0 +1,61 @@
+{
+    "msg": "OK",
+    "data": [
+        {
+            "id": 1,
+            "state": 2,
+            "type": 1,
+            "user_id": 21,
+            "amount": 19,
+            "ranking": 1,
+            "update_time": "2020-09-02 09:02:05.0",
+            "create_time": "2020-09-02 08:44:49.0",
+            "wxUser": {
+                "nickname": "user2",
+                "headimgurl": "../assets/imgs/avatar.png"
+            }
+        },
+        {
+            "id": 2,
+            "state": 1,
+            "type": 1,
+            "user_id": 123589,
+            "amount": 8,
+            "ranking": 1,
+            "update_time": "2020-09-02 00:00:00.0",
+            "create_time": "2020-09-02 00:00:00.0",
+            "wxUser": {
+                "nickname": "user2",
+                "headimgurl": "../assets/imgs/avatar.png"
+            }
+        },
+        {
+            "id": 3,
+            "state": 1,
+            "type": 1,
+            "user_id": 123565,
+            "amount": 6,
+            "ranking": 2,
+            "update_time": "2020-09-02 00:00:00.0",
+            "create_time": "2020-09-02 00:00:00.0",
+            "wxUser": {
+                "nickname": "user2",
+                "headimgurl": "../assets/imgs/avatar.png"
+            }
+        },
+        {
+            "id": 4,
+            "state": 1,
+            "type": 1,
+            "user_id": 12356,
+            "amount": 6,
+            "ranking": 2,
+            "update_time": "2020-09-02 00:00:00.0",
+            "create_time": "2020-09-02 00:00:00.0",
+            "wxUser": {
+                "nickname": "user3",
+                "headimgurl": "../assets/imgs/avatar.png"
+            }
+        }
+    ]
+}

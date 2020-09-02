@@ -88,7 +88,7 @@ export class NinePage {
     if (!infiniteScroll) {
       this.loadingService.showLoading();
     }
-    this.httpService.post('/dtk/getNineGoods', { pageId: pageId, cid: cid }).then((res: any) => {
+    this.httpService.get('/NineGoods.json').then((res: any) => {
 
       this.loadingService.hideLoading();
       res.list.forEach(element => {

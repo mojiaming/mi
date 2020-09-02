@@ -51,19 +51,7 @@ export class ForgotPasswordPage {
    */
   getMailCode(user) {
     // console.log(user)
-    this.submitted = true;
-    this.httpService.post('/user/sendMail', { username: user.username, type: 'forgot:' }).then((res: any) => {
-
-      if (res && res.msg == 'OK') {
-        this.toastService.showToast('验证码已发送，请注意查收...');
-        this.storageService.write('email:time', new Date().getTime());
-        this.setEamilTime();
-
-      } else {
-        this.submitted = false;
-        this.toastService.showToast(res.msg);
-      }
-    })
+    this.toastService.showToast('验证码已发送，请注意查收...');
   }
 
 
@@ -107,15 +95,8 @@ export class ForgotPasswordPage {
     this.loadingService.showLoading();
     user.mailCode = user.mailCode.toUpperCase();
     user.password = Md5.hashStr(user.password);
-    this.httpService.post('/user/forgotPassword', user).then((res: any) => {
-      this.loadingService.hideLoading();
-      if (res && res.msg == 'OK') {
-        this.toastService.showToast('重置成功');
-        this.storageService.write('username', user.username);
-        this.navCtrl.setRoot('LoginEmailPage');
-      } else if (res.msg) {
-        this.toastService.showToast(res.msg);
-      }
-    })
+    this.toastService.showToast('重置成功');
+    this.storageService.write('username', user.username);
+    this.navCtrl.setRoot('LoginEmailPage');
   }
 }

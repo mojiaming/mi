@@ -57,7 +57,7 @@ export class OrderPage {
   }
 
   getData1(infiniteScroll?:any){
-    this.httpService.post('/order/select', this.param1).then(res => {
+    this.httpService.get('/order.json').then(res => {
       this.loadingService.hideLoading();
       if(infiniteScroll){
         infiniteScroll.complete();
@@ -73,7 +73,7 @@ export class OrderPage {
 
 
   getData2(infiniteScroll?:any){
-    this.httpService.post('/order/select', this.param2).then(res => {
+    this.httpService.get('/order.json').then(res => {
       if(infiniteScroll){
         infiniteScroll.complete();
       }
@@ -87,7 +87,7 @@ export class OrderPage {
   }
 
   getData3(infiniteScroll?:any){
-    this.httpService.post('/order/select', this.param3).then(res => {
+    this.httpService.get('/order.json').then(res => {
       if(infiniteScroll){
         infiniteScroll.complete();
       }
@@ -101,7 +101,7 @@ export class OrderPage {
   }
 
   getData4(infiniteScroll?:any){
-    this.httpService.post('/order/select', this.param4).then(res => {
+    this.httpService.get('/order.json').then(res => {
       if(infiniteScroll){
         infiniteScroll.complete();
       }
@@ -120,9 +120,7 @@ export class OrderPage {
    * @param refresher 下拉刷新
    */
   doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
     setTimeout(() => {
-      console.log('Async operation has ended');
       refresher.complete();
     }, 2000);
   }
@@ -134,7 +132,6 @@ export class OrderPage {
    * @param infiniteScroll 上拉加载
    */
   doInfinite(infiniteScroll) {
-    console.log('Begin async operation');
     if(this.state == 'one'){
       if(!this.ban1){
         this.param1.pageNo += this.param1.pageSize;

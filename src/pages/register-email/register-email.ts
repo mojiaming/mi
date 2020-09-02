@@ -62,17 +62,21 @@ export class RegisterEmailPage {
    */
   getMailCode(user) {
     // console.log(user)
-    this.submitted = true;
-    this.httpService.post('/user/sendMail', { username: user.username, type: 'login:' }).then((res: any) => {
-      if (res && res.msg == 'OK') {
-        this.toastService.showToast('验证码已发送，请注意查收...');
-        this.storageService.write('email:time', new Date().getTime());
-        this.setEamilTime();
-      } else {
-        this.submitted = false;
-        this.toastService.showToast(res.msg);
-      }
-    })
+    // this.submitted = true;
+    // 请求后台发送验证码
+    // this.httpService.post('/system/sendMail', { username: user.username, type: 'login:' }).then((res: any) => {
+    //   if (res && res.msg == 'OK') {
+    //     this.toastService.showToast('验证码已发送，请注意查收...');
+    //     this.storageService.write('email:time', new Date().getTime());
+    //     this.setEamilTime();
+    //   } else {
+    //     this.submitted = false;
+    //     this.toastService.showToast(res.msg);
+    //   }
+    // })
+    this.toastService.showToast('验证码已发送，请注意查收...');
+    this.storageService.write('email:time', new Date().getTime());
+    this.setEamilTime();
   }
 
 
@@ -117,7 +121,7 @@ export class RegisterEmailPage {
       user['code'] = this.code;
     }
     user['password'] = Md5.hashStr(new Date().getTime().toString());
-    this.httpService.post('/user/registerEmail', user).then((res: any) => {
+    this.httpService.get('/user.json').then((res: any) => {
       this.loadingService.hideLoading();
       if (res && res.msg == 'OK') {
         // this.toastService.showToast('注册成功');

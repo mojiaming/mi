@@ -51,7 +51,7 @@ export class SearchPage {
   ionViewDidLoad() {
 
 
-    this.httpService.get('/dtk/getHot').then((res: any) => {
+    this.httpService.get('/hot.json').then((res: any) => {
       if (res && res.msg == 'OK' && res.data && res.data.hotWords.length > 20) {
         this.hots = res.data.hotWords.slice(0, 20);
         this.storage.set('searchHot', this.hots);
@@ -59,7 +59,8 @@ export class SearchPage {
     })
     this.userInfo = this.storageService.read("UserInfo");
     // 获取轮播商品
-    this.httpService.post('/goods/products', { topcate: encodeURI('热销'), page: 1, pagesize: 12 }).then(res => {
+    // , { topcate: encodeURI('热销'), page: 1, pagesize: 12 }
+    this.httpService.get('/products.json').then(res => {
       if (res && res['data'] && res['data'].length == 12) {
         res['data'].forEach(element => {//计算最终价格
           element['amount'] = (element.zk_final_price - element.coupon_amount).toFixed(2);
@@ -69,7 +70,8 @@ export class SearchPage {
       }
     })
 
-    this.httpService.post('/goods/products', { topcate: encodeURI('优质品'), page: 1, pagesize: 12 }).then(res => {
+    // , { topcate: encodeURI('优质品'), page: 1, pagesize: 12 }
+    this.httpService.get('/products.json').then(res => {
       if (res && res['data'] && res['data'].length == 12) {
         res['data'].forEach(element => {//计算最终价格
           element['amount'] = (element.zk_final_price - element.coupon_amount).toFixed(2);

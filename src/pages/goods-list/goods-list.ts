@@ -74,7 +74,7 @@ export class GoodsListPage {
     this.postParam.page = this.page;
     this.postParam.pagesize = this.pagesize;
     this.postParam.sort = this.sort;
-    this.httpService.post('/goods/getSuper', this.postParam).then(res => {
+    this.httpService.get('/super.json').then(res => {
       this.loadingService.hideLoading();
       if (infiniteScroll) {
         infiniteScroll.complete();

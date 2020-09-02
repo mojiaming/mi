@@ -47,7 +47,8 @@ export class SpecialGoodsPage {
     if (!infiniteScroll) {
       this.loadingService.showLoading();
     }
-    this.httpService.post('/goods/products', { page: this.oneData.page, pagesize: this.pagesize, topcate: encodeURI('热销') }).then((res: any) => {
+    // , { page: this.oneData.page, pagesize: this.pagesize, topcate: encodeURI('热销') }
+    this.httpService.get('/products.json').then((res: any) => {
       if (infiniteScroll) {
         infiniteScroll.complete();
       } else {
@@ -73,7 +74,8 @@ export class SpecialGoodsPage {
   * @param infiniteScroll 
   */
   getTowData(infiniteScroll?) {
-    this.httpService.post('/goods/products', { page: this.towData.page, pagesize: this.pagesize, topcate: encodeURI('优质品') }).then((res: any) => {
+    // , { page: this.towData.page, pagesize: this.pagesize, topcate: encodeURI('优质品') }
+    this.httpService.get('/products.json').then((res: any) => {
       if (infiniteScroll) {
         infiniteScroll.complete();
       } 
@@ -97,7 +99,8 @@ export class SpecialGoodsPage {
   */
   getThreeData(infiniteScroll?) {
 
-    this.httpService.post('/goods/products', { page: this.threeData.page, pagesize: this.pagesize, topcate: encodeURI('母婴') }).then((res: any) => {
+    // , { page: this.threeData.page, pagesize: this.pagesize, topcate: encodeURI('母婴') }
+    this.httpService.get('/products.json').then((res: any) => {
       if (infiniteScroll) {
         infiniteScroll.complete();
       }
@@ -121,7 +124,8 @@ export class SpecialGoodsPage {
   */
   getFourData(infiniteScroll?) {
 
-    this.httpService.post('/goods/products', { page: this.fourData.page, pagesize: this.pagesize, topcate: encodeURI('特价') }).then((res: any) => {
+    // , { page: this.fourData.page, pagesize: this.pagesize, topcate: encodeURI('特价') }
+    this.httpService.get('/products.json').then((res: any) => {
       if (infiniteScroll) {
         infiniteScroll.complete();
       }

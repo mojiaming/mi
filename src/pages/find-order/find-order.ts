@@ -40,15 +40,16 @@ export class FindOrderPage {
    * 找回订单
    */
   onFindOrder(){
-    this.loadingService.showLoading();
-    this.httpService.post('/order/findOrder',{trade_id:this.trade_id}).then((res:any) => {
-      this.loadingService.hideLoading();
-      if(res && res.msg == 'OK'){
-        this.navCtrl.push('OrderPage');
-      } else if(res && res.msg) {
-        this.alertService.showAlert(res.msg);
-      }
-    })
+    // this.loadingService.showLoading();
+    // this.httpService.post('/findOrder',{trade_id:this.trade_id}).then((res:any) => {
+    //   this.loadingService.hideLoading();
+    //   if(res && res.msg == 'OK'){
+    //     this.navCtrl.push('OrderPage');
+    //   } else if(res && res.msg) {
+    //     this.alertService.showAlert(res.msg);
+    //   }
+    // })
+    this.navCtrl.push('OrderPage');
   }
 
   /**

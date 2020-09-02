@@ -1,0 +1,82 @@
+{
+    "msg": "OK",
+    "data": {
+        "goods_details": [
+            {
+                "mall_coupon_remain_quantity": 0,
+                "coupon_remain_quantity": 550,
+                "promotion_rate": 200,
+                "cat_ids": [
+                    6398,
+                    6399,
+                    6415
+                ],
+                "coupon_min_order_amount": 1000,
+                "mall_coupon_discount_pct": 0,
+                "service_tags": [
+                    24,
+                    9,
+                    13
+                ],
+                "mall_id": 109076406,
+                "mall_name": "木睿官方旗舰店",
+                "coupon_total_quantity": 3000,
+                "mall_coupon_min_order_amount": 0,
+                "mall_coupon_end_time": 0,
+                "goods_name": "巴旦木批发坚果零食夏威夷果手剥杏仁散装零食炒货干果巴达木袋装",
+                "sales_tip": "1368",
+                "goods_id": 70059699720,
+                "goods_gallery_urls": [
+                    "https://img.pddpic.com/mms-material-img/2020-09-01/ec3a085f-d2d8-4013-b851-0b212c643263.jpeg.a.jpeg",
+                    "https://img.pddpic.com/mms-material-img/2020-09-01/22cc9db5-eb9d-476d-a67e-4b7953cbc345.jpeg.a.jpeg",
+                    "https://img.pddpic.com/mms-material-img/2020-09-01/7eff4c21-f6fa-455b-801e-56ddcc0bb867.jpeg.a.jpeg",
+                    "https://t00img.yangkeduo.com/goods/images/2019-11-27/1e4008cf-1e36-4aa3-b4c6-69521b496271.jpg",
+                    "https://t00img.yangkeduo.com/goods/images/2019-11-27/064da2b8-831c-4058-bafe-724a14236bb3.jpg",
+                    "https://t00img.yangkeduo.com/goods/images/2019-11-27/cb907543-b040-467e-8d9a-4ad9a0b2eb21.jpg",
+                    "https://t00img.yangkeduo.com/goods/images/2019-11-27/73c03380-887f-4a0f-9cb7-287128817440.jpg",
+                    "https://t00img.yangkeduo.com/goods/images/2019-11-27/bcc5b363-0e60-4fb1-a8e1-e6da56c19e1d.jpg"
+                ],
+                "goods_desc": "巴旦木批发坚果零食夏威夷果手剥杏仁散装零食炒货干果巴达木袋装",
+                "opt_name": "食品",
+                "opt_id": 1,
+                "opt_ids": [
+                    1,
+                    23554,
+                    8836,
+                    8584,
+                    10696,
+                    8585,
+                    8586,
+                    10700,
+                    12,
+                    22926,
+                    22932,
+                    22297,
+                    10009,
+                    219,
+                    96,
+                    21857,
+                    10723,
+                    11876,
+                    228,
+                    22953,
+                    5867,
+                    9975,
+                    8569,
+                    8570,
+                    8571,
+                    9979
+                ],
+                "goods_image_url": "https://img.pddpic.com/mms-material-img/2020-09-01/ec3a085f-d2d8-4013-b851-0b212c643263.jpeg.a.jpeg",
+                "min_normal_price": 2000,
+                "mall_coupon_start_time": 0,
+                "mall_coupon_total_quantity": 0,
+                "mall_coupon_max_discount_amount": 0,
+                "min_group_price": 1690,
+                "coupon_start_time": 1598889600,
+                "coupon_discount": 1000,
+                "coupon_end_time": 1599062399
+            }
+        ]
+    }
+}

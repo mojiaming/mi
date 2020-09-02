@@ -41,40 +41,14 @@ export class InviteCodePage {
    * 验证码监听事件
    */
   onCodeChange(){
-    this.isInvite = true;
-    if(this.code.length == 6){
-      this.httpService.post('/user/selectCode',{code: this.code}).then((res:any) => {
-        if(res && res.msg == 'OK' && res.data ){
-          this.isInvite = false;
-          this.inviteUser = res.data;
-        } else {
-          this.toastService.showToast('邀请码错误，未找到关联用户');
-        }
-      })
-    }
+   
   }
 
   /**
    * 提交
    */
   onSubmit(){
-    this.loadingService.showLoading();
-    this.user.code = this.code;
-    this.httpService.post('/user/weChatLogin',this.user).then((res:any) => {
-      this.loadingService.hideLoading();
-      if(res && res.msg == 'OK'){
-        this.toastService.showToast('注册成功');
-        res.data.openid = this.user.openid;
-        this.storageService.write('UserInfo', res.data);
-        this.storageService.write('login:type', 'wechat');
-        this.globalData.username = res.data.nickname;
-        this.globalData.token = res.data.token;
-        this.storageService.write('token', this.globalData.token);
-        this.navCtrl.setRoot(TabsPage, { value: 0 });
-      } else if(res.msg) {
-        this.toastService.showToast(res.msg);
-      }
-    })
+    this.toastService.showToast('注册成功');
   }
 
 }

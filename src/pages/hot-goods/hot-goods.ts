@@ -44,7 +44,7 @@ export class HotGoodsPage {
    */
   getOneData() {
     this.loadingService.showLoading();
-    this.httpService.post('/dtk/getRanKing', { rankType: 1 }).then((res: any) => {
+    this.httpService.get('/ranKingGoods.json').then((res: any) => {
       this.loadingService.hideLoading();
       if (res && res.msg == 'OK' && res.list) {
         res.list.forEach(element => {
@@ -64,7 +64,7 @@ export class HotGoodsPage {
    */
   getTowData() {
     this.loadingService.showLoading();
-    this.httpService.post('/dtk/getRanKing', { rankType: 4 }).then((res: any) => {
+    this.httpService.get('/ranKingGoods.json').then((res: any) => {
       this.loadingService.hideLoading();
       if (res && res.msg == 'OK' && res.list) {
         res.list.forEach(element => {

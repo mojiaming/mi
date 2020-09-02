@@ -18,8 +18,10 @@ export class ConfigProvider {
   //ip地址
   // 文件访问地址
   static FILE_URL: string = 'http://192.168.10.1:8080/file';
-  // 接口请求地址
-  static API_URL: string = 'http://192.168.10.1:8080';
+  // // 接口请求地址
+  static API_URL: string = '../assets/json';
+  //  接口请求地址
+  // static API_URL: string = 'http://192.168.10.1:8080';
   //app下载地址
   static DOWNLOAD_URL: string = 'http://192.168.10.1:8080/download';
 
@@ -54,7 +56,7 @@ export class ConfigProvider {
  * 热更新key
  */
 export const CODE_PUSH_DEPLOYMENT_KEY = {
-  'android': {     
+  'android': {
     'Production': 'rh_1nL6jTFPD09bI6aG2f1mM96b14581--42af-921e-6ba60824d8b1',
     'Staging': 'RuLutg8obRyKNCYUKMKjbZKzF2MB41fc1-99af-921e-6ba60824d8b1'
   },

@@ -49,8 +49,8 @@ export class GoodsDetailedPage {
    this.isWXBrowser =  this.helper.isWXBrowser();
     this.loadingService.showLoading();
     this.goods = this.navParams.get('goods');
-    
-    this.httpService.post('/goods/hcapi', { detail: 1, para: encodeURI(this.goods) }).then(res => {
+    // , { detail: 1, para: encodeURI(this.goods) }
+    this.httpService.get('/goodsDetailed.json').then(res => {
   
       if (res && res['data']) {
         if(res['data'].coupon_info){
@@ -63,34 +63,26 @@ export class GoodsDetailedPage {
         
         this.goods_detailed = res['data'];
 
-        this.httpService.post('/goods/getSuper', { para: encodeURI(this.goods_detailed['cat_name']), page: 1, pagesize: 12 }).then(res => {
-          if (res && res['result_list'] && res['result_list'].length > 3) {
-            try {
-              this.hosGoods1 = res['result_list'].slice(0, 3);
-              this.hosGoods2 = res['result_list'].slice(3, 6);
-              this.hosGoods3 = res['result_list'].slice(6, 9);
-              this.hosGoods4 = res['result_list'].slice(9, 12);
-            } catch (err) {
-              console.log(err)
-            }
-    
-          }
-        })
-        this.httpService.post('/goods/getTheHcapi', { token: this.globalData.token, para: encodeURI(this.goods) }).then(res => {
-          this.loadingService.hideLoading();
-          if (res && res['data']) {
-            this.goods_detailed['tbk_pwd'] = res['data'].tbk_pwd;
-            this.url = res['data'].coupon_short_url;
-            // alert(this.url)
-            // this.url = res['data'].coupon_short_url.replace('https','tbopen');
-            // alert(this.url);
-            // window.location = this.url;
-          }
-        })
+        this.goods_detailed['tbk_pwd'] = "￥pSpYcWmMsx5￥";
+        this.url = "https://s.click.taobao.com/jkIhxwu";
       }
      
     })
 
+    this.httpService.get('/super.json').then(res => {
+      this.loadingService.hideLoading();
+      if (res && res['result_list'] && res['result_list'].length > 3) {
+        try {
+          this.hosGoods1 = res['result_list'].slice(0, 3);
+          this.hosGoods2 = res['result_list'].slice(3, 6);
+          this.hosGoods3 = res['result_list'].slice(6, 9);
+          this.hosGoods4 = res['result_list'].slice(9, 12);
+        } catch (err) {
+          console.log(err)
+        }
+
+      }
+    })
   }
 
 

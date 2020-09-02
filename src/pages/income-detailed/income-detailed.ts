@@ -42,54 +42,23 @@ export class IncomeDetailedPage {
     this.param1.token = this.globalData.token;
     this.param2.token = this.globalData.token;
     this.param3.token = this.globalData.token;
-    this.loadingService.showLoading();
+    // this.loadingService.showLoading();
     this.getData1();
     this.getData2();
     this.getData3();
   }
 
   getData1(infiniteScroll?: any) {
-    this.httpService.post('/divided/selectAll', this.param1).then(res => {
-      this.loadingService.hideLoading();
-      if (infiniteScroll) {
-        infiniteScroll.complete();
-      }
-      if (res && res['data']) {
-        if (res['data'].length < this.param1.pageSize) {
-          this.ban1 = true;
-        }
-        this.data1 = this.data1.concat(res['data']);
-      }
-    })
+
   }
 
 
   getData2(infiniteScroll?: any) {
-    this.httpService.post('/divided/selectAll', this.param2).then(res => {
-      if (infiniteScroll) {
-        infiniteScroll.complete();
-      }
-      if (res && res['data']) {
-        if (res['data'].length < this.param2.pageSize) {
-          this.ban2 = true;
-        }
-        this.data2 = this.data2.concat(res['data']);
-      }
-    })
+
   }
 
   getData3(infiniteScroll?: any) {
-    this.httpService.post('/divided/selectAll', this.param3).then(res => {
-      if (infiniteScroll) {
-        infiniteScroll.complete();
-      }
-      if (res && res['data']) {
-        if (res['data'].length < this.param3.pageSize) {
-          this.ban3 = true;
-        }
-        this.data3 = this.data3.concat(res['data']);
-      }
-    })
+
   }
 
 

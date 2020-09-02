@@ -1,0 +1,40 @@
+{
+    "msg": "高佣转链成功！",
+    "result": 1,
+    "data": {
+        "zk_final_price": "1089",
+        "coupon_remain_count": "93000",
+        "num_iid": "625271949249",
+        "shop_dsr": "48364",
+        "title": "XW【品牌清仓】AA全棉磨毛四件套双面加厚床单被套双人床品",
+        "nick": "恋人水星家纺形象店",
+        "user_type": "0",
+        "category_id": "50008163",
+        "shop_title": "简约良品严选",
+        "ios_tbk_pwd": "5.0緮置内容￥MsdTcWmMIwc￥转移至淘tao寳或點击炼接 https://m.tb.cn/h.VDwulET 至流览器【XW【品牌清仓】AA全棉磨毛四件套双面加厚床单被套双人床品】",
+        "small_images": [
+            "https://img.alicdn.com/i2/3207201439/O1CN01pE3Ra81MV6YNKeyP7_!!3207201439.jpg",
+            "https://img.alicdn.com/i1/3207201439/O1CN01r99wZE1MV6YS1SzGs_!!3207201439.jpg",
+            "https://img.alicdn.com/i2/3207201439/O1CN01ScPohM1MV6YWAkTn5_!!3207201439.jpg",
+            "https://img.alicdn.com/i2/3207201439/O1CN01ffs3Up1MV6YYAfDCu_!!3207201439.jpg"
+        ],
+        "seller_id": "3207201439",
+        "cat_name": "床上用品",
+        "tbk_pwd": "￥MsdTcWmMIwc￥",
+        "cat_leaf_name": "床品套件/四件套/多件套",
+        "coupon_total_count": "100000",
+        "pict_url": "https://img.alicdn.com/bao/uploaded/i2/3207201439/O1CN01zFJ5xl1MV6YT1SV4W_!!3207201439.jpg",
+        "coupon_info": "满1089元减1000元",
+        "volume": "1390",
+        "coupon_click_url": "https://uland.taobao.com/coupon/edetail?e=kYzQGTMuUyME%2BdAb1JoOOq%2FUreyS55atGHI7AZ3oWM7Im%2BnnLPqij3kr935jVE%2FekMaAcJmwCptFACIclmPRXx0ngOdXMyooux7ZBqKnfvXpOBzRP2faBudth9k8bqqSHKTgBzHkoM7XTQC0vfau6E%2F9Zk7cDx8UGcM%2FmOVXilllmJ2QqqjoQHui%2Fn%2FQ7Z5VQbiJ9szi%2FYaA9F9OCeGtkw%3D%3D&traceId=0bb6a5c315990334212041393e456c&union_lens=lensId:TAPI@1599033421@0b176087_0d4b_1744dd1adb3_0c3d@01",
+        "real_post_fee": "0.00",
+        "item_url": "https://item.taobao.com/item.htm?id=625271949249",
+        "commission_rate": "19.50",
+        "max_commission_rate": "19.50",
+        "reserve_price": "1089",
+        "coupon_start_time": "2020-08-31",
+        "coupon_end_time": "2020-09-05",
+        "coupon_short_url": "https://s.click.taobao.com/T40kwwu"
+    },
+    "error": "0"
+}

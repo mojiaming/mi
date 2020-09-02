@@ -61,39 +61,7 @@ export class JdGoodsListPage {
    * @param sort 
    */
   getData(infiniteScroll?: any) {
-    if (!infiniteScroll) {
-      this.loadingService.showLoading();
-    }
-    this.postParam.keyword = this.searchtext;
-    this.postParam.pageIndex = this.page;
-    this.httpService.post('/jd/getSearch', this.postParam).then((res: any) => {
-      this.loadingService.hideLoading();
-      if (infiniteScroll) {
-        infiniteScroll.complete();
-      }
-      if (res && res.list && res.list.length > 0) {
-        res.list.forEach(element => {
-          if (element.commissionInfo && element.commissionInfo.commission) {
-            element.commission = (element.commissionInfo.commission * this.role).toFixed(2);
-          } else {
-            element.commission = 0;
-          }
-          element.couponPrice = 0;
-          if (element.couponInfo && element.couponInfo.couponList && element.couponInfo.couponList.length > 0) {
-            element.couponPrice = element.couponInfo.couponList[0].discount;
-          }
 
-          element.imgUrl = element.imageInfo.imageList[0].url;
-          element.price = (Number(element.priceInfo.price) - Number(element.commission)) - element.couponPrice;
-          element.price = (element.price).toFixed(2);
-        });
-
-        this.data = this.data.concat(res.list);
-
-      } else {
-        this.ban = true;
-      }
-    })
   }
 
   /**
@@ -183,12 +151,6 @@ export class JdGoodsListPage {
    * @param item 
    */
   onItem(item) {
-    this.loadingService.showLoading();
-    this.httpService.get('/jd/urlGenerate/' + item.skuId).then((res: any) => {
-      this.loadingService.hideLoading();
-      if (res && res.msg == 'OK') {
-          this.helper.openUrlByBrowser(res.data.short_url);
-      }
-    })
+
   }
 }

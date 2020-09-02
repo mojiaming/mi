@@ -196,38 +196,29 @@ export class MyApp {
   authToken() {
     // 判断是否已经登录过
     let token: string = this.storageService.read('token');
-    if (token) {
-      this.loading.showLoading();
-      this.httpService.get('/user/tokenAuth').then((res: any) => {
-        if (res && res.msg == 'OK') {
-          this.loading.hideLoading();
-          this.globalData.token = token;
-          this.loginSucceed(null);
-        } else {
-          this.login();
-        }
-      })
+    this.globalData.token = token;
+    // if (token) {
+    //   this.loading.showLoading();
+    //   this.httpService.get('/user/tokenAuth').then((res: any) => {
+    //     if (res && res.msg == 'OK') {
+    //       this.loading.hideLoading();
+    //       this.globalData.token = token;
+    //       this.loginSucceed(null);
+    //     } else {
+    //       this.login();
+    //     }
+    //   })
 
-    }
+    // }
   }
 
   /**
    * 重新登录
    */
   login() {
-    if (this.storageService.read('login:type') == 'phone') {//如果是邮箱登录
-      this.httpService.post('/user/loginMail', { username: this.userInfo.username, password: this.userInfo.password }).then((res: any) => {
-        this.loginSucceed(res);
-      })
-    } else if (this.storageService.read('login:type') == 'id') {//如果是关联公众号登录
-      this.httpService.post('/user/loginPass', { password: this.userInfo.password }).then((res: any) => {
-        this.loginSucceed(res);
-      })
-    } else if (this.storageService.read('login:type') == 'wechat') {//如果是微信登录授权
-      this.httpService.post('/user/loginWechat', { openid: this.userInfo.openid }).then((res: any) => {
-        this.loginSucceed(res);
-      })
-    }
+    this.httpService.get('/user.json').then((res: any) => {
+      this.loginSucceed(res);
+    })
   }
 
 

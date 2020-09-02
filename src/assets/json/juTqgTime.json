@@ -1,0 +1,27 @@
+{
+    "msg": "OK",
+    "data": {
+        "list": [
+            "{\"period\":\"00:00\", \"active\":false, \"type\":1, \"minTime\":0, \"maxTime\":8, \"isGrad\":false}",
+            {
+                "maxTime": 10,
+                "period": "08:00",
+                "minTime": 8,
+                "active": false,
+                "type": 1,
+                "grad": false
+            },
+            "{\"period\":\"10:00\", \"active\":false, \"type\":1, \"minTime\":10, \"maxTime\":11, \"isGrad\":false}",
+            "{\"period\":\"11:00\", \"active\":false, \"type\":1, \"minTime\":11, \"maxTime\":12, \"isGrad\":false}",
+            "{\"period\":\"12:00\", \"active\":false, \"type\":1, \"minTime\":12, \"maxTime\":13, \"isGrad\":false}",
+            "{\"period\":\"13:00\", \"active\":false, \"type\":1, \"minTime\":13, \"maxTime\":14, \"isGrad\":false}",
+            "{\"period\":\"14:00\", \"active\":false, \"type\":1, \"minTime\":14, \"maxTime\":15, \"isGrad\":false}",
+            "{\"period\":\"15:00\", \"active\":false, \"type\":1, \"minTime\":15, \"maxTime\":16, \"isGrad\":false}",
+            "{\"period\":\"17:00\", \"active\":false, \"type\":1, \"minTime\":17, \"maxTime\":18, \"isGrad\":false}",
+            "{\"period\":\"19:00\", \"active\":false, \"type\":1, \"minTime\":19, \"maxTime\":20, \"isGrad\":false}",
+            "{\"period\":\"21:00\", \"active\":false, \"type\":1, \"minTime\":21, \"maxTime\":22, \"isGrad\":false}",
+            "{\"period\":\"22:00\", \"active\":false, \"type\":1, \"minTime\":22, \"maxTime\":23, \"isGrad\":false}",
+            "{\"period\":\"23:00\", \"active\":false, \"type\":1, \"minTime\":23, \"maxTime\":24, \"isGrad\":false}"
+        ]
+    }
+}

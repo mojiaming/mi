@@ -16,12 +16,6 @@ import { LoadingServiceProvider } from '../../providers/loading-service/loading-
   templateUrl: 'withdrawal-detailed.html',
 })
 export class WithdrawalDetailedPage {
-
-  param = {
-    token: '',
-    pageNo: 0,
-    pageSize: 10
-  }
   data = [];
   ban = false;
   constructor(private httpService: HttpServiceProvider,
@@ -30,7 +24,6 @@ export class WithdrawalDetailedPage {
   }
 
   ionViewDidLoad() {
-    this.param.token = this.globalData.token;
     this.loadingService.showLoading();
     this.getData();
 
@@ -40,15 +33,9 @@ export class WithdrawalDetailedPage {
     if (infiniteScroll) {
       infiniteScroll.complete();
     }
-    this.httpService.post('/withdrawal/selectAll', this.param).then(res => {
+    this.httpService.get('/withdrawal.json').then(res => {
       this.loadingService.hideLoading();
       if (res && res['data']) {
-        if (res['data'].length < this.param.pageSize) {
-          this.ban = true;
-          if (infiniteScroll) {
-            infiniteScroll.enable(false);
-          }
-        }
         this.data = this.data.concat(res['data']);
       }
     })
@@ -62,7 +49,6 @@ export class WithdrawalDetailedPage {
   doInfinite(infiniteScroll) {
 
     if (!this.ban) {
-      this.param.pageNo += this.param.pageSize;
       this.getData(infiniteScroll);
     } else {
       infiniteScroll.complete();

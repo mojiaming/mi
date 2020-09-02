@@ -39,7 +39,7 @@ export class TurnChainPage {
   onZhuanhuan(){
     if (this.helper.isLogin()) {
       this.loadingService.showLoading();
-      this.httpService.post('/goods/getCommission', { para: this.text }).then((res: any) => {
+      this.httpService.post('/****goods', { para: this.text }).then((res: any) => {
         this.loadingService.hideLoading();
         if (res && res.type) {
           if (res.type == 'PDD') {

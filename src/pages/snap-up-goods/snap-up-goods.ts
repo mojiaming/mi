@@ -143,7 +143,7 @@ export class SnapUpGoodsPage {
 
       }
     })
-    this.httpService.post('/taobao/getJuTqg', this.param).then((res: any) => {
+    this.httpService.get('/juTqg.json').then((res: any) => {
       if (infiniteScroll) {
         infiniteScroll.complete();
       } else {

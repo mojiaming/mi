@@ -82,7 +82,7 @@ export class DtkGoodsListPage {
     this.postParam.cids = this.Categoryhosts[index].cid;
     this.postParam.pageId = this.Categoryhosts[index].pageId;
 
-    this.httpService.post('/dtk/getSearch', this.postParam).then((res: any) => {
+    this.httpService.get('/products.json').then((res: any) => {
       this.loadingService.hideLoading();
       if (res && res.msg == 'OK' && res.list) {
         res.list.forEach(element => {

@@ -1,0 +1,65 @@
+{
+    "msg": "OK",
+    "list": [
+        {
+            "image_url": "https://t16img.yangkeduo.com/pdd_oms/2020-08-19/5dab26307d3854e9ece644cc5b50d5b7.jpg",
+            "name": "君乐宝周年庆钜惠",
+            "goods_num": 8,
+            "id": 7613
+        },
+        {
+            "image_url": "https://t16img.yangkeduo.com/pdd_oms/2020-06-10/8dec236116d3a0bc3b6987eb21bf13d8.jpg",
+            "name": "蓝臻铂睿 官方正品",
+            "goods_num": 5,
+            "id": 7610
+        },
+        {
+            "image_url": "https://t16img.yangkeduo.com/pdd_oms/2020-06-02/c818fc32f6e8f5b32a927e360b44c345.jpg",
+            "name": "美赞臣专场",
+            "goods_num": 14,
+            "id": 7609
+        },
+        {
+            "image_url": "https://t16img.yangkeduo.com/pdd_oms/2020-05-19/6cd9e89b797fedbb0ae61e13ae324323.jpg",
+            "name": "头盔专场",
+            "goods_num": 4,
+            "id": 7608
+        },
+        {
+            "image_url": "https://t16img.yangkeduo.com/pdd_oms/2020-04-16/818f2f0c20f40f752de14f58c8f1211c.jpg",
+            "name": "美赞臣奶粉官方补贴活动",
+            "goods_num": 13,
+            "id": 7607
+        },
+        {
+            "image_url": "http://t16img.yangkeduo.com/pdd_oms/2020-03-25/ebfc5ca073b6dbb9e063d59a2d76e2c3.jpg",
+            "name": "开学装备大放价！",
+            "goods_num": 86,
+            "id": 7606
+        },
+        {
+            "image_url": "http://t16img.yangkeduo.com/pdd_oms/2020-03-18/a228bef8be5348edce013be0ef67a3b6.png",
+            "name": "春装上新大聚惠！",
+            "goods_num": 58,
+            "id": 7605
+        },
+        {
+            "image_url": "http://t16img.yangkeduo.com/pdd_oms/2020-03-11/6aca3f437933d29eccb1691f6dab85a5.jpg",
+            "name": "拼多多会员充值日",
+            "goods_num": 12,
+            "id": 7603
+        },
+        {
+            "image_url": "http://t16img.yangkeduo.com/pdd_oms/2020-03-06/b372139b11c2caf91d1280d3a228b683.jpg",
+            "name": "38福女节专场",
+            "goods_num": 38,
+            "id": 7600
+        },
+        {
+            "image_url": "http://t16img.yangkeduo.com/pdd_oms/2020-03-06/a26ed01950b56a0a601f9fe1105842e7.png",
+            "name": "9.9元包邮专场",
+            "goods_num": 66,
+            "id": 7602
+        }
+    ]
+}

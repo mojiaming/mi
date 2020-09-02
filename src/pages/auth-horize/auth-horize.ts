@@ -18,7 +18,9 @@ import { GlobalDataProvider } from '../../providers/global-data/global-data';
   templateUrl: 'auth-horize.html',
 })
 export class AuthHorizePage {
-  data: any;
+  data: any = {
+    password: "0覆置本段内容￥OiRrcWN6J￥转移至ta0寶或掂击炼接 https://m.tb.cn/h.VDQ 至浏.览览.器【点击“打开”查看并浏览页面详情，精选商品任您选购】"
+  };
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private popoverCtrl: PopoverController,
     private globalData: GlobalDataProvider,
@@ -28,9 +30,7 @@ export class AuthHorizePage {
   }
 
   ionViewDidLoad() {
-    this.httpService.get('/taobao/getAuthCode').then((res: any) => {
-      this.data = res;
-    })
+ 
   }
 
 
@@ -39,13 +39,6 @@ export class AuthHorizePage {
    * 网页授权事件
    */
   onWeb() {
-    // let modal = this.modalCtrl.create('TbAuthorizaPage', { url: this.data.url });
-    // modal.present();
-    // modal.onDidDismiss(data => {
-    //   if(data){
-    //     this.onSuccess();
-    //   }
-    // })
     let modal = this.popoverCtrl.create('BuyGoodsPage', { value: this.data.url, title: '网页授权',msg: "网页链接：" }, { cssClass: 'share-goods' });
     modal.present();
   }
@@ -62,13 +55,6 @@ export class AuthHorizePage {
    * 点击成功验证事件
    */
   onSuccess() {
-    this.httpService.get('/taobao/successAuth?token='+this.globalData.token).then((res: any) => {
-      if (res && res.data && res.data.relation_id) {
-        this.storageService.write("UserInfo", res.data);
-        this.navCtrl.goToRoot({});
-      } else {
-        this.alertService.showAlert( "账号暂未授权完成，请检测是否已确认授权。如有疑问请联系客服！");
-      }
-    })
+    this.navCtrl.goToRoot({});
   }
 }

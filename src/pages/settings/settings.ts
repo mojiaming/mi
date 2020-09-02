@@ -43,7 +43,7 @@ export class SettingsPage {
     this.isMobile = this.helper.isMobile();
 
     this.uploader = new FileUploader({
-      url: ConfigProvider.API_URL + "/user/uploadFile", //上传地址
+      url: ConfigProvider.API_URL + "/uploadFile", //上传地址
       method: "POST",  //上传方式
       itemAlias: "file",  //别名（后台接受参数名）
       autoUpload: true, //是否自动上传（如果为true，则在input选择完后自动上传）
@@ -79,7 +79,7 @@ export class SettingsPage {
     this.globalData.username = null;
     this.globalData.userId = null;
     this.events.publish('login:go');
-    this.httpService.get('/user/logOut');
+    this.httpService.get('/logOut');
   }
 
   /**
@@ -138,7 +138,7 @@ export class SettingsPage {
     }
 
     this.loadingService.showLoading();
-    this.httpService.post('/user/update', this.userInfo).then((res: any) => {
+    this.httpService.post('/update', this.userInfo).then((res: any) => {
       this.loadingService.hideLoading();
       if (res && res.msg == 'OK') {
         this.storageService.write('UserInfo', this.userInfo);

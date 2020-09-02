@@ -22,11 +22,7 @@ export class RankingRulesPage {
   }
 
   ionViewDidLoad() {
-    this.httpService.get('/system/select').then((res: any) => {
-      if (res && res.msg == 'OK') {
-        this.system = res.data;
-      }
-    });
+
   }
 
 }

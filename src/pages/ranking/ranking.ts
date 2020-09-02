@@ -30,13 +30,13 @@ export class RankingPage {
     this.loadingService.showLoading();
 
     
-    this.httpService.post("/randing/selectTheMonth", { type: 1 }).then((res: any) => {
+    this.httpService.get("/randing.json").then((res: any) => {
       if (res && res.msg == 'OK') {
         this.theData = res.data;
       }
     })
 
-    this.httpService.post("/randing/selectBeforeMonth", { type: 1 }).then((res: any) => {
+    this.httpService.get("/randing.json").then((res: any) => {
       if (res && res.msg == 'OK') {
         this.loadingService.hideLoading();
         this.beforeData = res.data;

@@ -88,7 +88,7 @@ export class HttpServiceProvider {
       } else {
         this.events.publish('user:login');
       }
-    } else {
+    } else if(status != 200) {
       if (!!!!this.text && this.text.ERROR) {
         this.toast.showToast(this.text.ERROR);
       }

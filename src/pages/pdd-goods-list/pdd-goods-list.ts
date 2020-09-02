@@ -50,7 +50,8 @@ export class PddGoodsListPage {
     this.role = this.storageService.read('roleNumber');
     if (this.navParams.get('item')) {
       this.item = this.navParams.get('item');
-      this.httpService.post('/pdd/getThemeGoodsSearch', { theme_id: this.item.id }).then((res: any) => {
+      // , { theme_id: this.item.id }
+      this.httpService.get('/pddSearch.json').then((res: any) => {
         this.loadingService.hideLoading();
         if (res && res.msg == 'OK' && res.list) {
           res.list.forEach(element => {
@@ -188,19 +189,6 @@ export class PddGoodsListPage {
    */
   onItem(item) {
     this.navCtrl.push('PddGoodsDetailedPage', { value: item.goods_id });
-    // if (!this.helper.isMobile()) {
-    //   this.navCtrl.push('PddGoodsDetailedPage', { value: item.goods_id });
-    // } else {
-    //   this.loadingService.showLoading();
-    //   this.httpService.get('/pdd/urlGenerate/' + item.goods_id).then((res: any) => {
-    //     this.loadingService.hideLoading();
-    //     if (res && res.msg == 'OK') {
-    //       this.themeableService.create(res.data.mobile_short_url);
-    //     }
-    //   })
-    // }
-
-
   }
 
 }

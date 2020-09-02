@@ -120,7 +120,7 @@ export class HomePage {
       height: this.platform.height() / 3 - (26 + 24) + 'px'
     }
     // 获取轮播图数据
-    this.httpService.get('/home/select').then((res: any) => {
+    this.httpService.get('/homeImgs.json').then((res: any) => {
       if (res && res.msg == 'OK') {
         this.imgList = res.list;
         this.storage.set('home:imgList', this.imgList);
@@ -207,11 +207,11 @@ export class HomePage {
 
 
   /**
-* 获取部门数据
-*/
+  * 获取抢购时间段
+  */
   getJuTqgTime(): Promise<any> {
     return new Promise((resolve) => {
-      this.httpService.get('/taobao/getJuTqgTime').then((res: any) => {
+      this.httpService.get('/juTqgTime.json').then((res: any) => {
         if (res && res.msg == "OK" && res.data) {
           this.timeData = [];
           res.data.list.forEach(element => {
@@ -237,7 +237,7 @@ export class HomePage {
     let sT = this.selectData.minTime < 10 ? '0' + this.selectData.minTime : this.selectData.minTime;
     this.param.startTime = this.dayTime + ' ' + sT + ':00:00';
     this.param.endTime = this.dayTime + ' ' + sT + ':01:00';
-    this.httpService.post('/taobao/getJuTqg', this.param).then((res: any) => {
+    this.httpService.get('/juTqg.json').then((res: any) => {
       if (res && res.msg == 'OK') {
         let data = JSON.parse(res.data);
         if (data.tbk_ju_tqg_get_response && data.tbk_ju_tqg_get_response.results && data.tbk_ju_tqg_get_response.results.results) {
@@ -391,7 +391,7 @@ export class HomePage {
    * 获取分成
    */
   getRole() {
-    this.httpService.get('/role/selectAll').then(res => {
+    this.httpService.get('/role.json').then(res => {
       if (res && res['msg'] == 'OK' && res['data'].length > 0) {
         this.role = res['data'][0].divided / 10;
         this.storageService.write('roleNumber', this.role);
@@ -403,7 +403,7 @@ export class HomePage {
    * 获取商品
    */
   getGoods(infiniteScroll?: any) {
-    this.httpService.post('/goods/products', { sort: 'coupon_des', page: + this.page, pagesize: + this.pagesize }).then(res => {
+    this.httpService.get('/products.json').then(res => {
       if (infiniteScroll) {
         infiniteScroll.complete();
       }
@@ -503,7 +503,7 @@ export class HomePage {
     this.postParam.cat = this.Categoryhosts[index].cid;
     this.postParam.page = this.Categoryhosts[index].pageId;
     this.postParam.sort = this.Categoryhosts[index].sort;
-    this.httpService.post('/goods/getSuper', this.postParam).then((res: any) => {
+    this.httpService.get('/goods.json').then((res: any) => {
       // this.loadingService.hideLoading();
       if (res && res.error == '0' && res.result_list) {
         res.result_list.forEach(element => {

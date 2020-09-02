@@ -39,32 +39,7 @@ export class SearchGoodsPage {
    */
   onView() {
     if (this.hleper.isLogin()) {
-      this.loadingService.showLoading();
-      this.httpService.post('/goods/getCommission', { para: this.text }).then((res: any) => {
-        this.loadingService.hideLoading();
-        if (res && res.type) {
-          if (res.type == 'PDD') {
-            if (!this.storageService.read('pddPid')) {
-              this.storageService.write('pddPid', 'Y');
-            }
-            this.navCtrl.push('PddGoodsDetailedPage', { value: res.data.goodsId });
-            this.onClose();
-          } else if (res.type == 'JD') {
-            if (!this.storageService.read('jdPid')) {
-              this.storageService.write('jdPid', 'Y');
-            }
-            this.onClose();
-            this.hleper.openUrlByBrowser(res.data);         
-          } else if (res.type == 'TB') {
-            this.navCtrl.push('GoodsDetailedPage', { goods: res.data.num_iid });
-            this.onClose();
-          }
-        } else {
-          this.loadingService.hideLoading();
-          this.onClose();
-          this.toastService.showToast(res.data);
-        }
-      })
+      this.onClose();
     } else {
       this.events.publish('login:go');
     }

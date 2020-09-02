@@ -1,0 +1,23 @@
+{
+    "msg": "OK",
+    "list": [
+        {
+            "id": 1,
+            "state": 0,
+            "sort": 1,
+            "img_url": "../assets/imgs/jiaocheng.jpg",
+            "url": "https://mp.weixin.qq.com/s/7Ep4fbrvRezy8irnrxQRzw",
+            "type": 2,
+            "create_time": "2019-08-22 16:56:06.0"
+        },
+        {
+            "id": 2,
+            "state": 0,
+            "sort": 2,
+            "img_url": "../assets/imgs/tuiguang.jpg",
+            "url": "https://mp.weixin.qq.com/s/GZQAwkj0VPP1ZvJMipOTfA",
+            "type": 2,
+            "create_time": "2019-08-22 16:57:48.0"
+        }
+    ]
+}

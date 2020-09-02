@@ -1,0 +1,33 @@
+{
+    "msg": "OK",
+    "data": {
+        "id": null,
+        "type": 1,
+        "subscribe": null,
+        "openid": null,
+        "nickname": "Kevin",
+        "sex": null,
+        "language": null,
+        "city": null,
+        "province": null,
+        "country": null,
+        "headimgurl": "../assets/imgs/avatar.png",
+        "update_time": "2020-09-02 15:22:22.0",
+        "create_time": "2019-08-16 16:47:01.0",
+        "wechat": null,
+        "phome": null,
+        "token": "fbc4996003690395e1jji6c6deseda",
+        "userInfo": {
+            "id": null,
+            "state": null,
+            "pid": "mm_234590033_194050077_54706900100",
+            "user_id": null,
+            "tb_user_id": null,
+            "balance": "888.0",
+            "cash_back": "0",
+            "commission": "0",
+            "update_time": "2020-09-02 15:22:22.0",
+            "create_time": "2019-08-16 16:47:01.0"
+        }
+    }
+}

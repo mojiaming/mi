@@ -33,15 +33,7 @@ export class AssociatedCodePage {
    * 生成关联码
    */
   setCode(){
-    this.isCreate = true;
-    this.httpService.get('/user/createCode').then((res:any) => {
-      this.isCreate = false;
-      if(res && res.msg =='OK'){  
-        this.code = res.code;
-      } else if(res.msg){
-        this.toastService.showToast(res.msg);
-      }
-    })
+    this.code = "12345678910";
   }
 
   /**

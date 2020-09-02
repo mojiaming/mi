@@ -36,7 +36,7 @@ export class JdGoodsPage {
   }
 
   async ionViewDidLoad() {
-    this.loadingService.showLoading();
+    // this.loadingService.showLoading();
 
     // 创建pid
     if (!this.storageService.read('jdPid')) {
@@ -45,19 +45,20 @@ export class JdGoodsPage {
 
     this.role = this.storageService.read('roleNumber');
 
-    this.getData();
+    // this.getData();
 
   }
 
 
   pidGenerate(): Promise<any> {
     return new Promise((resolve) => {
-      this.httpService.get('/jd/pidGenerate').then((res: any) => {
-        if (res && res.msg == 'OK') {
-          this.storageService.write('jdPid', 'Y');
-        }
-        resolve(res);
-      });
+      // this.httpService.get('/jd/pidGenerate').then((res: any) => {
+      //   if (res && res.msg == 'OK') {
+      //     this.storageService.write('jdPid', 'Y');
+      //   }
+      //   resolve(res);
+      // });
+      this.storageService.write('jdPid', 'Y');
     });
   }
 
@@ -68,7 +69,7 @@ export class JdGoodsPage {
     if (!infiniteScroll) {
       this.loadingService.showLoading();
     }
-    this.httpService.post('/jd/getTopGoodsList', this.postParam).then((res: any) => {
+    this.httpService.get('/TopGoodsList.json').then((res: any) => {
       this.loadingService.hideLoading();
       if (res && res.msg == 'OK') {
         if (infiniteScroll) {

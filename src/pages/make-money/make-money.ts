@@ -24,15 +24,14 @@ declare var Wechat: any;
   templateUrl: 'make-money.html',
 })
 export class MakeMoneyPage {
-
-  url: string;
+  url:string;
   isWXBrowser: boolean = false;//判断是否微信浏览器
   data: any;
   shareData = {
     message: '', // 内容
     subject: '邀请您注册', // 主题
     files: [],
-    url: ''
+    url: 'http://suo.im/69aUoR'
   }
   isMobile: boolean = false;//是否真机
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -48,25 +47,7 @@ export class MakeMoneyPage {
 
   ionViewDidLoad() {
     this.isWXBrowser = this.helper.isWXBrowser();
-    this.loadingService.showLoading();
     this.isMobile = this.helper.isMobile();
-    if (!this.isWXBrowser) {
-      this.httpService.get('/user/generateCode').then((res: any) => {
-        this.loadingService.hideLoading();
-        if (res && res.data) {
-          this.url = ConfigProvider.FILE_URL + res.data.code_path;
-          this.data = res.data;
-          this.shareData.url = res.url;
-        }
-      })
-    } else {
-      this.httpService.post('/promote/getQrcode', { token: this.globalData.token }).then(res => {
-        this.loadingService.hideLoading();
-        if (res && res['data']) {
-          this.url = ConfigProvider.FILE_URL + '/' + res['data'].path;
-        }
-      })
-    }
 
   }
 
@@ -89,7 +70,7 @@ export class MakeMoneyPage {
   onShareImg() {
     this.shareData.files =[];
     this.shareData.message = '您的好友' + this.data.nickname + '邀请您使用蜜淘平台，购物先领劵，还能有佣金！';
-    this.shareData.files.push(this.url);
+    this.shareData.files.push(this.shareData.url);
     this.socialSharing.shareWithOptions(this.shareData)
   }
 
