@@ -82,14 +82,8 @@ export class MyApp {
               this.storageService.write('token', this.globalData.token);
               if (param['page'] == 'order') {
                 this.nav.setRoot("OrderPage");
-              } else if (param['page'] == 'income') {
-                this.nav.setRoot("IncomeDetailedPage");
               } else if (param['page'] == 'myteam') {
                 this.nav.setRoot("MyTeamPage");
-              } else if (param['page'] == 'tixian') {
-                this.nav.setRoot("WithdrawalPage");
-              } else if (param['page'] == 'daili') {
-                this.nav.setRoot("AgentApplyPage");
               } else if (param['page'] == 'ranking') {
                 this.nav.setRoot("RankingPage");
               } else if (param['page'] == 'contact') {
